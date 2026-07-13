@@ -1,0 +1,382 @@
+/* ------------------------- */
+/* Fonts                     */
+/* ------------------------- */
+@font-face {
+  font-family: 'Belove Melody';
+  src: url('../assets/fonts/BeloveMelody-Regular.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ------------------------- */
+/* Custom properties         */
+/* ------------------------- */
+:root {
+  --color-bg: #E7DFFB;
+  --color-cta: #A788FD;
+  --color-cta-text: #F8F7F3;
+  --color-text: #000000;
+  --color-nav-text: #1E1E1E;
+  --color-icon-green: #92B579;
+  --font-mono: 'DM Mono', monospace;
+  --font-display: 'Belove Melody', cursive;
+
+  --nav-height: 90px;
+  --max-width: 1680px;
+}
+
+/* ------------------------- */
+/* Reset / base               */
+/* ------------------------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-mono);
+  font-size: 16px;
+  color: var(--color-text);
+  background: var(--color-bg);
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+/* ------------------------- */
+/* Buttons                    */
+/* ------------------------- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  padding: 0.9rem 1.8rem;
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.btn-cta {
+  background: var(--color-cta);
+  color: var(--color-cta-text);
+}
+
+.btn-cta:hover {
+  opacity: 0.88;
+}
+
+/* ------------------------- */
+/* Header / Nav                */
+/* ------------------------- */
+.site-header {
+  background: var(--color-bg);
+  position: relative;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: var(--nav-height);
+  padding: 0 4vw;
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 2.75rem;
+}
+
+.nav-links a {
+  font-family: var(--font-mono);
+  font-size: 1rem;
+  letter-spacing: 0.05em;
+  color: var(--color-nav-text);
+  padding-bottom: 4px;
+  border-bottom: 2px solid transparent;
+  transition: border-color 0.2s ease;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  border-bottom-color: var(--color-nav-text);
+}
+
+.nav-links a.active {
+  font-weight: 700;
+}
+
+.nav-rsvp {
+  padding: 0.85rem 2.2rem;
+}
+
+/* ------------------------- */
+/* Hamburger (mobile only)    */
+/* ------------------------- */
+.hamburger {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.hamburger img {
+  width: 26px;
+  height: auto;
+}
+
+/* ------------------------- */
+/* Mobile menu overlay        */
+/* ------------------------- */
+.mobile-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  height: 466px;
+  z-index: 100;
+  background: var(--color-cta-text);
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2.75rem;
+  text-align: center;
+  overflow-y: auto;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08);
+  transform: translateY(-8px);
+  opacity: 0;
+  pointer-events: none;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.mobile-menu.is-open {
+  transform: translateY(0);
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.mobile-menu-close {
+  position: absolute;
+  top: 1.75rem;
+  left: 1.5rem;
+  width: 32px;
+  height: 32px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.mobile-menu-close span {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: var(--color-text);
+}
+
+.mobile-menu-close span:first-child {
+  transform: rotate(45deg);
+}
+
+.mobile-menu-close span:last-child {
+  transform: rotate(-45deg);
+}
+
+.mobile-menu-links {
+  display: flex;
+  flex-direction: column;
+  gap: 2.25rem;
+}
+
+.mobile-menu-links a {
+  font-family: var(--font-mono);
+  font-size: 1.1rem;
+  letter-spacing: 0.05em;
+  color: var(--color-nav-text);
+  padding-bottom: 4px;
+  border-bottom: 2px solid transparent;
+}
+
+.mobile-menu-links a.active {
+  font-weight: 700;
+  border-bottom-color: var(--color-nav-text);
+}
+
+/* body lock when menu open */
+body.menu-open {
+  overflow: hidden;
+}
+
+/* ------------------------- */
+/* Rolling image strip        */
+/* ------------------------- */
+.scroll-strip {
+  width: 100%;
+  overflow: hidden;
+  height: 34vw;
+  max-height: 460px;
+}
+
+.scroll-track {
+  display: flex;
+  gap: 15px;
+  width: max-content;
+  height: 100%;
+  animation: scroll-left 40s linear infinite;
+}
+
+.scroll-track img {
+  height: 100%;
+  width: auto;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+@keyframes scroll-left {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .scroll-track {
+    animation: none;
+  }
+}
+
+/* ------------------------- */
+/* Hero                       */
+/* ------------------------- */
+.hero {
+  text-align: center;
+  padding: 4.5rem 1.5rem 5rem;
+}
+
+.hero-title {
+  font-family: var(--font-display);
+  font-weight: normal;
+  font-size: clamp(2.75rem, 8vw, 90px);
+  line-height: 1;
+}
+
+.hero-date {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: clamp(0.9rem, 2vw, 22px);
+  letter-spacing: 0.12em;
+  background: var(--color-cta-text);
+  padding: 0.9rem 2rem;
+  margin: 2rem 0 2.25rem;
+}
+
+.hero-details-btn {
+  display: block;
+  width: fit-content;
+  margin: 0 auto;
+}
+
+/* ------------------------- */
+/* Tablet                     */
+/* ------------------------- */
+@media (max-width: 1024px) and (min-width: 721px) {
+  .nav-links {
+    gap: 1.75rem;
+  }
+
+  .nav-links a {
+    font-size: 0.9rem;
+  }
+
+  .scroll-strip {
+    height: 26vw;
+    max-height: 320px;
+  }
+}
+
+/* ------------------------- */
+/* Mobile                     */
+/* ------------------------- */
+@media (max-width: 720px) {
+  .nav {
+    padding: 0 5vw;
+    height: 64px;
+    justify-content: space-between;
+  }
+
+  .nav-links {
+    display: none;
+  }
+
+  .nav-rsvp {
+    padding: 0.7rem 1.6rem;
+    font-size: 0.8rem;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  .mobile-menu {
+    display: flex;
+    top: 0;
+  }
+
+  /* closer crop on mobile: each image now fills most of the viewport,
+     with just a sliver of the neighboring photos peeking in on either side */
+  .scroll-strip {
+    height: 88vw;
+    max-height: none;
+  }
+
+  .scroll-track {
+    gap: 15px;
+  }
+
+  .scroll-track img {
+    width: 74vw;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  .hero {
+    padding: 3rem 1.25rem 3.5rem;
+  }
+
+  .hero-title {
+    font-size: clamp(2.5rem, 13vw, 3.5rem);
+  }
+
+  .hero-date {
+    font-size: clamp(0.8rem, 3.5vw, 1rem);
+    padding: 0.75rem 1.4rem;
+  }
+}
