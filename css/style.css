@@ -483,7 +483,11 @@ body.menu-open {
   }
 
   .meet-name-pill {
-    font-size: .8rem;
+    font-size: clamp(.7rem, 15vw, .8rem);
+  }
+
+  .meet-parent {
+    font-size: clamp(.6rem, 15vw, .8rem);
   }
 
   .meet-photo-wrap {
