@@ -336,7 +336,7 @@ body.menu-open {
     max-width: 420px;
     aspect-ratio: 730 / 884;
     overflow: hidden;
-    border: 1px solid var(--color-cta);
+    border: 2px solid var(--color-cta);
     margin-bottom: 2.5rem;
   }
 
