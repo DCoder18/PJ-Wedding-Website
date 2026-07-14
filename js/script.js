@@ -38,3 +38,24 @@ document.querySelectorAll('a[href^="#"]').forEach(link => {
     // do nothing rather than error, so this is safe to leave in as we add sections
   });
 });
+
+
+function initMeetScrollColor() {
+  const wraps = document.querySelectorAll('.meet-photo-wrap');
+  if (!wraps.length || !('IntersectionObserver' in window)) return;
+
+  const isMobile = () => window.matchMedia('(max-width: 720px)').matches;
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (!isMobile()) {
+        entry.target.classList.remove('is-colored');
+        return;
+      }
+      entry.target.classList.toggle('is-colored', entry.isIntersecting);
+    });
+  }, { threshold: 0.8 }); // mostly in viewport before it colors in
+
+  wraps.forEach(wrap => observer.observe(wrap));
+}
+initMeetScrollColor();
