@@ -349,15 +349,13 @@ body.menu-open {
     top: 0;
   }
 
-  /* closer crop on mobile: each image now fills most of the viewport,
-     with just a sliver of the neighboring photos peeking in on either side */
   .scroll-strip {
     height: 88vw;
     max-height: none;
   }
 
   .scroll-track {
-    gap: 15px;
+    animation: scroll-left 20s linear infinite;
   }
 
   .scroll-track img {
