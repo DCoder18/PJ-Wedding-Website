@@ -252,11 +252,13 @@ body.menu-open {
   width: max-content;
   height: 100%;
   animation: scroll-left 40s linear infinite;
+  will-change: transform;
 }
 
 .scroll-track img {
   height: 100%;
   width: auto;
+  aspect-ratio: 577 / 682;
   object-fit: cover;
   flex-shrink: 0;
 }
