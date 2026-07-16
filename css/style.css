@@ -13,12 +13,15 @@
 /* Custom properties         */
 /* ------------------------- */
 :root {
-  --color-bg: #E7DFFB;
-  --color-cta: #A788FD;
-  --color-cta-text: #F8F7F3;
+  --color-purple-100: #E7DFFB;
+  --color-purple-800: #A788FD;
+
+  --color-beige: #F8F7F3;
+
   --color-text: #000000;
   --color-nav-text: #1E1E1E;
   --color-icon-green: #92B579;
+
   --font-mono: 'DM Mono', monospace;
   --font-display: 'Belove Melody', cursive;
 
@@ -39,7 +42,7 @@ body {
   font-family: var(--font-mono);
   font-size: 16px;
   color: var(--color-text);
-  background: var(--color-bg);
+  background: var(--color-purple-100);
   -webkit-font-smoothing: antialiased;
 }
 
@@ -66,18 +69,18 @@ img {
   justify-content: center;
   font-family: var(--font-mono);
   font-size: 0.85rem;
-  letter-spacing: 0.15em;
+  font-weight: 500;
+  letter-spacing: 5px;
   text-transform: uppercase;
   padding: 0.9rem 1.8rem;
-  border-radius: 4px;
   border: none;
   cursor: pointer;
   transition: transform 0.2s ease, opacity 0.2s ease;
 }
 
 .btn-cta {
-  background: var(--color-cta);
-  color: var(--color-cta-text);
+  background: var(--color-purple-800);
+  color: var(--color-beige);
 }
 
 .btn-cta:hover {
@@ -88,7 +91,7 @@ img {
 /* Header / Nav                */
 /* ------------------------- */
 .site-header {
-  background: var(--color-bg);
+  background: var(--color-purple-100);
   position: relative;
 }
 
@@ -111,7 +114,7 @@ img {
 .nav-links a {
   font-family: var(--font-mono);
   font-size: 1rem;
-  letter-spacing: 0.05em;
+  letter-spacing: 1px;
   color: var(--color-nav-text);
   padding-bottom: 4px;
   border-bottom: 2px solid transparent;
@@ -162,7 +165,7 @@ img {
   right: 0;
   height: 466px;
   z-index: 100;
-  background: var(--color-cta-text);
+  background: var(--color-beige);
   flex-direction: column;
   align-items: center;
   justify-content: center;
@@ -294,7 +297,7 @@ body.menu-open {
   font-family: var(--font-mono);
   font-size: clamp(0.9rem, 2vw, 22px);
   letter-spacing: 0.12em;
-  background: var(--color-cta-text);
+  background: var(--color-beige);
   padding: 0.9rem 2rem;
   margin: 2rem 0 2.25rem;
 }
@@ -320,7 +323,7 @@ body.menu-open {
     flex-direction: column;
     align-items: center;
     text-align: center;
-    padding: 5.5rem 6vw;
+    padding: 5.5rem 3vw;
   }
 
   .meet-bride {
@@ -336,7 +339,7 @@ body.menu-open {
     max-width: 420px;
     aspect-ratio: 730 / 884;
     overflow: hidden;
-    border: 2px solid var(--color-cta);
+    border: 2px solid var(--color-purple-800);
     margin-bottom: 2.5rem;
   }
 
@@ -358,13 +361,6 @@ body.menu-open {
     font-weight: normal;
     font-size: clamp(2.25rem, 5vw, 3.75rem); /* 60px at desktop */
     letter-spacing: 0.02em;
-    text-transform: uppercase;
-  }
-
-  .meet-swash {
-    font-size: 1.6em;
-    line-height: 0;
-    vertical-align: -0.1em;
   }
 
   .meet-divider {
@@ -379,15 +375,15 @@ body.menu-open {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 358px;
+    padding: 20px;
     max-width: 100%;
     height: 35px;
     font-family: var(--font-mono);
     font-weight: 500;
-    font-size: 1.25rem; /* 20px */
+    font-size: clamp(.75rem, 2vw, 1.25rem);
     letter-spacing: 5px;
     text-transform: uppercase;
-    background: var(--color-bg);
+    background: var(--color-purple-100);
     margin-bottom: 1.25rem;
   }
 
@@ -398,6 +394,126 @@ body.menu-open {
     letter-spacing: 2px;
     color: var(--color-text);
   }
+
+
+/* ------------------------- */
+/* The Details section        */
+/* ------------------------- */
+.details-section {
+  padding: 5rem 6vw 6rem;
+  background: var(--color-beige);
+}
+
+.details-heading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  margin-bottom: 3.5rem;
+}
+
+.details-heading-line {
+  width: 90px;
+  height: 1px;
+  background: var(--color-text);
+  opacity: 0.6;
+}
+
+.details-title {
+  font-family: var(--font-display);
+  font-weight: normal;
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  letter-spacing: 0.02em;
+}
+
+/* ---- Venue card ---- */
+.venue-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+  background: #CEDCC1;
+  border-radius: 28px;
+  padding: 3rem 4vw;
+  max-width: 1200px;
+  margin: 0 auto 5rem;
+}
+
+.venue-heading {
+  font-family: var(--font-display);
+  font-weight: normal;
+  font-size: clamp(2.75rem, 3vw, 3rem);
+  margin-bottom: 0.75rem;
+}
+
+.venue-underline {
+  display: block;
+  max-width: 130px;
+  height: 2px;
+  background: #fff;
+  opacity: 0.6;
+}
+
+.venue-intro {
+  font-family: var(--font-mono);
+  font-size: 1rem;
+  letter-spacing: 1px;
+  margin-bottom: 1.5rem;
+}
+
+.venue-address {
+  font-family: var(--font-mono);
+  font-weight: 500;
+  font-size: clamp(.5rem, 3vw, 1.1rem);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  background: #F8F7F399;
+  max-width: 526px;
+  padding: 1.25rem 1.5rem;
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+}
+
+.venue-map-link {
+  font-family: var(--font-mono);
+  font-size: 0.95rem;
+  letter-spacing: 0.05em;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  font-weight: 500;
+}
+
+/* ---- Zigzag timeline ---- */
+.timeline {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.timeline-image {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* Visually hides content while keeping it in the accessibility tree —
+   the standard, widely-tested pattern (used by WordPress, Bootstrap, etc.)
+   Do not use `display: none` or `visibility: hidden` here, both of which
+   would hide it from screen readers too. */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.timeline-accessible-time {
+  font-weight: 700;
+}
 
 /* ------------------------- */
 /* Tablet                     */
@@ -492,5 +608,18 @@ body.menu-open {
 
   .meet-photo-wrap {
     max-width: 100%;
+  }
+
+  .venue-card {
+    flex-direction: column;
+    padding: 2.25rem 6vw;
+  }
+
+  .venue-right {
+    text-align: center;
+  }
+
+  .timeline-image {
+    aspect-ratio: 808 / 1600;
   }
 }
