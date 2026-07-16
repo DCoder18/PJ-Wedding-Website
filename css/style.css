@@ -20,7 +20,9 @@
 
   --color-text: #000000;
   --color-nav-text: #1E1E1E;
-  --color-icon-green: #92B579;
+
+  --color-green-100: #CEDCC1;
+  --color-green-800: #92B579;
 
   --font-mono: 'DM Mono', monospace;
   --font-display: 'Belove Melody', cursive;
@@ -368,7 +370,7 @@ body.menu-open {
     height: 1px;
     margin: 1.5rem 0 2rem;
     border: none;
-    background: var(--color-icon-green);
+    background: var(--color-green-800);
   }
 
   .title-divider.title-divider--details {
@@ -419,7 +421,7 @@ body.menu-open {
 .details-heading-line {
   width: 90px;
   height: 1px;
-  background: var(--color-icon-green);
+  background: var(--color-green-800);
   opacity: 0.6;
 }
 
@@ -431,54 +433,63 @@ body.menu-open {
 }
 
 /* ---- Venue card ---- */
-.venue-card {
+.info-card {
   display: flex;
   justify-content: space-between;
   align-items: center;
   gap: 2rem;
-  background: #CEDCC1;
   border-radius: 28px;
   padding: 3rem 4vw;
   max-width: 1200px;
   margin: 0 auto 3rem;
 }
 
-.venue-heading {
+.info-card.info-card--venue {
+  background: var(--color-green-100);
+}
+
+.info-card-heading {
   font-family: var(--font-display);
   font-weight: normal;
   font-size: clamp(2.75rem, 3vw, 3rem);
   margin-bottom: 0.75rem;
 }
 
-.venue-underline {
+.info-card-underline {
   display: block;
   max-width: 130px;
   height: 2px;
-  background: #fff;
   opacity: 0.6;
 }
 
-.venue-intro {
+.info-card-underline--venue {
+  background: #fff;
+}
+
+.info-card-intro {
   font-family: var(--font-mono);
   font-size: 1rem;
   letter-spacing: 1px;
   margin-bottom: 1.5rem;
 }
 
-.venue-address {
+.info-card-box {
   font-family: var(--font-mono);
   font-weight: 500;
   font-size: clamp(.5rem, 3vw, 1.1rem);
   letter-spacing: 0.06em;
   text-transform: uppercase;
-  background: #F8F7F399;
   max-width: 526px;
   padding: 1.25rem 1.5rem;
   margin-bottom: 1.5rem;
   line-height: 1.6;
 }
 
-.venue-map-link {
+.info-card-box.info-card-box--address {
+  background: #F8F7F399;
+}
+
+.info-card-link {
   font-family: var(--font-mono);
   font-size: 0.95rem;
   letter-spacing: 0.05em;
@@ -628,12 +639,12 @@ body.menu-open {
     background: var(--color-purple-800);
   }
 
-  .venue-card {
+  .info-card {
     flex-direction: column;
     padding: 2.25rem 6vw;
   }
 
-  .venue-right {
+  .info-card-col-right {
     text-align: center;
   }
 
