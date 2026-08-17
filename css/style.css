@@ -10,13 +10,14 @@
 }
 
 /* ------------------------- */
-/* Custom properties         */
+/* Custom properties dasdasda        */
 /* ------------------------- */
 :root {
   --color-purple-100: #E7DFFB;
   --color-purple-800: #A788FD;
 
   --color-beige: #F8F7F3;
+  --color-white: #ffffff;
 
   --color-text: #000000;
   --color-nav-text: #1E1E1E;
@@ -44,7 +45,7 @@ body {
   font-family: var(--font-mono);
   font-size: 16px;
   color: var(--color-text);
-  background: var(--color-purple-100);
+  background: var(--color-beige);
   -webkit-font-smoothing: antialiased;
 }
 
@@ -448,6 +449,12 @@ body.menu-open {
   background: var(--color-green-100);
 }
 
+
+
+.info-card--dresscode{
+  background: var(--color-white);
+}
+
 .info-card-heading {
   font-family: var(--font-display);
   font-weight: normal;
@@ -457,13 +464,17 @@ body.menu-open {
 
 .info-card-underline {
   display: block;
-  max-width: 130px;
+  /* max-width: 130px; */
   height: 2px;
-  opacity: 0.6;
+  /* opacity: 0.6; */
 }
 
 .info-card-underline--venue {
   background: #fff;
+}
+
+.info-card-underline--dresscode{
+  background: var(--color-green-100);
 }
 
 .info-card-intro {
@@ -487,6 +498,10 @@ body.menu-open {
 
 .info-card-box.info-card-box--address {
   background: #F8F7F399;
+}
+
+.info-card-box.info-card-box--dress {
+    background: var(--color-purple-100);
 }
 
 .info-card-link {
@@ -529,6 +544,44 @@ body.menu-open {
 .timeline-accessible-time {
   font-weight: 700;
 }
+
+/* ---- Banner Section ---- */
+
+.banner_pic {
+  max-width: auto;
+  margin: 0 auto;
+}
+
+.banner_image {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+
+
+/* ------------------------- */
+/* The Accomodation section        */
+/* ------------------------- */
+.accomodation-section {
+  padding: 5rem 6rem 0rem 6rem;
+  background: var(--color-white);
+  margin: 5rem 0;
+}
+
+.info-card-acc {
+  font-family: var(--font-mono);
+  font-size: 1rem;
+  letter-spacing: 1px;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.info-card-box.info-card-box--acc {
+  background: var(--color-purple-100);
+  text-align: center;
+}
+
 
 /* ------------------------- */
 /* Tablet                     */
@@ -644,11 +697,33 @@ body.menu-open {
     padding: 2.25rem 6vw;
   }
 
-  .info-card-col-right {
+  .info-card-col-left {
+    text-align: center;
+  }
+
+    .info-card-col-middle {
+    text-align: center;
+  }
+
+   .info-card-col-right {
     text-align: center;
   }
 
   .timeline-image {
     aspect-ratio: 808 / 1600;
   }
+
+  .accomodation-section {
+  padding: 5rem 1rem 0rem 1rem;
+}
+
+.info-card-acc br{
+  display: none;
+}
+
+.info-card-box--acc br{
+  display: none;
+}
+
+
 }
