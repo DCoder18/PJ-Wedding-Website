@@ -23,7 +23,7 @@
 
       <ul class="nav-links">
         <li><a href="#details" class="active">the details</a></li>
-        <li><a href="#accommodation">accommodation</a></li>
+        <li><a href="#accomodation">accommodation</a></li>
         <li><a href="#gifts">gifts</a></li>
         <li><a href="#faqs">faqs</a></li>
         <li><a href="#contact">contact</a></li>
@@ -165,10 +165,11 @@
 
   <!--Banner start-->
   <section class="banner">
-<div class="banner_pic">
+    <div class="banner_pic">
       <picture>
         <source media="(max-width: 720px)" srcset="assets/images/Banner/PJ_banner_mobile.svg">
-        <img class="banner_image" src="assets/images/Banner/PJ_banner_desktop.svg" alt="" role="presentation" width="2560" height="1300">
+        <img class="banner_image" src="assets/images/Banner/PJ_banner_desktop.svg" alt="" role="presentation"
+          width="2560" height="1300">
       </picture>
     </div>
   </section>
@@ -176,37 +177,244 @@
 
 
   <!--Accomodation Start-->
-  <section class="accomodation-section" id="accomodation">
+  <section class="accomodation-section" id="accomodation" >
     <div class="details-heading">
       <span class="details-heading-line"></span>
       <h2 class="details-title">Accomodation</h2>
       <span class="details-heading-line"></span>
     </div>
     <hr class="title-divider title-divider--details">
-    <p class="info-card-acc">For guests travelling from out of town, we have provided a selection of nearby <br> hotel options for your convenience.</p>
+    <p class="info-card-acc">For guests travelling from out of town, we have provided a selection of nearby <br> hotel
+      options for your convenience.</p>
 
     <div class="info-card info-card--acc">
       <div class="info-card-col-left">
         <div class="info-card-box info-card-box--acc">The Cove Rotana <br> Resort</div>
-          <p class="info-card-intro">12 mins drive to the venue</p>
+        <p class="info-card-intro">12 mins drive to the venue</p>
       </div>
-            <div class="info-card-col-middle">
-               <div class="info-card-box info-card-box--acc">citymax hotel<br>
-raK</div>
-          <p class="info-card-intro">20 mins drive to the venue</p>
+      <div class="info-card-col-middle">
+        <div class="info-card-box info-card-box--acc">citymax hotel<br>
+          raK</div>
+        <p class="info-card-intro">20 mins drive to the venue</p>
       </div>
       <div class="info-card-col-right">
-               <div class="info-card-box info-card-box--acc">Jannah Hotel <br>
-Apartments & Villas</div>
-          <p class="info-card-intro">05 mins drive to the venue</p>
+        <div class="info-card-box info-card-box--acc">Jannah Hotel <br>
+          Apartments & Villas</div>
+        <p class="info-card-intro">05 mins drive to the venue</p>
       </div>
     </div>
 
   </section>
 
-<!--Accomodation End-->
+  <!--Accomodation End-->
+
+  <!-- =========================
+     GIFTS
+========================= -->
+  <section class="gifts-section" id="gifts">
+    <div class="gifts-card">
+      <div class="gifts-title-wrap">
+        <h2 class="gifts-title">Gifts</h2>
+        <span class="gifts-line"></span>
+      </div>
+      <div class="gifts-content">
+        <p class="gifts-small">
+          Your presence at our wedding is the greatest gift we could ask for.
+        </p>
+        <p class="gifts-message">
+          SHOULD YOU WISH TO HONOUR US WITH A GIFT, A MONETARY CONTRIBUTION TOWARD OUR FUTURE TOGETHER VIA CASH ON THE DAY OR BANK TRANSFER WOULD BE SINCERELY APPRECIATED.
+        </p>
+        <button class="bank-details-btn" type="button">
+          <b>REQUEST BANK DETAILS</b>
+        </button>
+      </div>
+    </div>
+  </section>
 
 
+  <!-- =========================
+     RSVP
+========================= -->
+  <section class="rsvp-section" id="rsvp">
+    <!-- LEFT SIDE -->
+    <div class="rsvp-photo-side">
+      <h2 class="rsvp-photo-title">Celebrate With Us</h2>
+      <!-- CHANGE THIS IMAGE PATH TO YOUR RSVP PHOTO -->
+      <img src="assets/images/form/1.jpg" alt="Pearl and Johann" class="rsvp-photo">
+    </div>
+    <!-- RIGHT SIDE -->
+    <div class="rsvp-form-side">
+      <form class="rsvp-form" id="wedding-rsvp">
+        <h3 class="rsvp-form-title">PLEASE RSVP BELOW</h3>
+        <div class="rsvp-name-row">
+          <input type="text" name="firstName" placeholder="First Name" required>
+          <input type="text" name="lastName" placeholder="Last Name" required>
+        </div>
+        <input type="email" name="email" placeholder="Email Address" required>
+        <div class="rsvp-field">
+          <p class="rsvp-label">ATTENDANCE</p>
+          <label class="radio-row">
+            <input type="radio" name="attendance" value="Joyfully Accepts" checked>
+            <span>Joyfully Accepts</span>
+          </label>
+          <label class="radio-row">
+            <input type="radio" name="attendance" value="Regretfully Declines">
+            <span>Regretfully Declines</span>
+          </label>
+        </div>
+        <div class="rsvp-field">
+          <p class="rsvp-label">NUMBER OF GUESTS</p>
+          <div class="guest-counts">
+            <div class="guest-counter">
+              <span>Adults:</span>
+              <button type="button" class="counter-minus">−</button>
+              <span class="counter-value" data-input="adults">0</span>
+              <button type="button" class="counter-plus">+</button>
+              <input type="hidden" name="adults" value="0">
+            </div>
+
+            <div class="guest-counter">
+              <span>Children:<br>(below 12)</span>
+              <button type="button" class="counter-minus">−</button>
+              <span class="counter-value" data-input="children">0</span>
+              <button type="button" class="counter-plus">+</button>
+              <input type="hidden" name="children" value="0">
+            </div>
+          </div>
+        </div>
+        <button type="submit" class="rsvp-submit">
+          RSVP
+        </button>
+        <p class="rsvp-deadline">
+          LAST DAY TO RSVP DECEMBER 31, 2026
+        </p>
+      </form>
+    </div>
+  </section>
+
+  <!-- =========================
+     FAQS
+========================= -->
+<section class="faq-section" id="faqs">
+
+  <div class="faq-heading-col">
+    <h2 class="faq-title">Faqs</h2>
+    <span class="faq-title-line"></span>
+    <p class="faq-subtitle">WE'VE GOT ANSWERS</p>
+  </div>
+
+  <div class="faq-list">
+
+    <div class="faq-item">
+      <button class="faq-question" type="button">
+        <span>WHAT TIME SHOULD I ARRIVE?</span>
+        <span class="faq-icon">−</span>
+      </button>
+
+      <div class="faq-answer is-open">
+        <p>
+          Please arrive 30 minutes before the ceremony begins to allow time
+          for parking and seating.
+        </p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question" type="button">
+        <span>IS PARKING AVAILABLE?</span>
+        <span class="faq-icon">+</span>
+      </button>
+
+      <div class="faq-answer">
+        <p>
+          Yes, complimentary valet parking is available at the venue.
+        </p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question" type="button">
+        <span>CAN I BRING A GUEST?</span>
+        <span class="faq-icon">+</span>
+      </button>
+
+      <div class="faq-answer">
+        <p>
+          Our celebration is by invitation only. Immediate family members,
+          including spouses and children, are welcome to attend. We kindly ask
+          that the wedding website and event details not be shared beyond those
+          invited.
+        </p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question" type="button">
+        <span>WHAT IS THE NEAREST AIRPORT?</span>
+        <span class="faq-icon">+</span>
+      </button>
+
+      <div class="faq-answer">
+        <p>
+          Ras Al Khaimah (RAK) International Airport is the closest airport to
+          the venue. As flight availability can be limited from RAK airport,
+          many guests may find more convenient options through Dubai
+          International Airport or Sharjah International Airport, both located
+          about an hour's drive away.
+        </p>
+
+        <p>
+          For guests arriving at Sharjah International Airport, a complimentary
+          shuttle service is available between Sharjah and Ras Al Khaimah,
+          offering a convenient transportation option.
+        </p>
+      </div>
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================
+     CONTACT
+========================= -->
+<section class="contact-section" id="contact">
+
+  <div class="contact-heading">
+    <span class="contact-line"></span>
+    <h2 class="contact-title">Contact</h2>
+    <span class="contact-line"></span>
+  </div>
+
+  <p class="contact-copy">
+    If you have any questions regarding the wedding,<br>
+    please don't hesitate to reach out. We'd be happy to help.
+  </p>
+
+  <div class="contact-details">
+
+    <a href="mailto:therubdis@gmail.com" class="contact-item">
+      <span class="contact-icon">✉</span>
+      <span>THERUBDIS@GMAIL.COM</span>
+    </a>
+
+    <a href="tel:+971501071127" class="contact-item">
+      <span class="contact-icon">☎</span>
+      <span>+971 50 107 1127</span>
+    </a>
+
+  </div>
+
+  <div class="contact-footer">
+    <span>PEARL &amp; JOHANN</span>
+    <span class="footer-divider">|</span>
+    <span>SATURDAY, JANUARY 30, 2027</span>
+    <span class="footer-divider">|</span>
+    <span>INTERCONTINENTAL RAS AL KHAIMAH MINA AL ARAB RESORT &amp; SPA</span>
+  </div>
+
+</section>
 
   <script src="js/script.js"></script>
 </body>
