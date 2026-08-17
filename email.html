@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html>
+<body style="
+  margin:0;
+  padding:0;
+  background:#F8F7F3;
+  font-family:'Courier New', monospace;
+  color:#1E1E1E;
+">
+
+<table width="100%" cellpadding="0" cellspacing="0" border="0"
+  style="background:#F8F7F3; padding:30px 12px;">
+
+<tr>
+<td align="center">
+
+
+<!-- MAIN CONTAINER -->
+<table width="100%" cellpadding="0" cellspacing="0" border="0"
+  style="
+    max-width:600px;
+    background:#ffffff;
+    border-collapse:collapse;
+  ">
+
+
+<!-- PURPLE HEADER -->
+<tr>
+<td align="center"
+  style="
+    background:#A788FD;
+    padding:45px 25px;
+    color:#ffffff;
+  ">
+
+ <img
+  src="cid:weddingTitle"
+  alt="Pearl and Johann"
+  style="
+    display:block;
+    width:320px;
+    max-width:90%;
+    height:auto;
+    margin:0 auto;
+  "
+>
+
+  <div style="
+    margin-top:15px;
+    font-family:'Courier New', monospace;
+    font-size:15px;
+    letter-spacing:3px;
+  ">
+   <strong> Saturday, January 30, 2027</strong>
+  </div>
+
+</td>
+</tr>
+
+
+<!-- MAIN MESSAGE -->
+<tr>
+<td align="center"
+  style="
+    padding:45px 35px 30px;
+    background:#ffffff;
+  ">
+
+  <div style="
+     font-family:Georgia, serif;
+    font-size:30px;
+    margin-bottom:18px;
+  ">
+    Hi ${firstName || 'there'},<br><br>
+  </div>
+
+
+  <div style="
+    font-size:15px;
+    line-height:1.9;
+    letter-spacing:1px;
+  ">
+
+    ${
+      wasUpdated
+        ? 'Your RSVP has been updated successfully.'
+        : 'We are so happy that you will be celebrating with us.'
+    }
+
+  </div>
+
+</td>
+</tr>
+
+
+<!-- RSVP DETAILS CARD -->
+<tr>
+<td style="padding:0 35px 35px;">
+
+<table width="100%" cellpadding="0" cellspacing="0"
+  style="
+    background:#CEDCC1;
+    border-radius:18px;
+  ">
+
+<tr>
+<td align="center" style="padding:30px 20px;">
+
+  <div style="
+     font-family:Georgia, serif;
+    font-size:20px;
+    margin-bottom:22px;
+  ">
+    RSVP Details
+  </div>
+
+
+  <div style="
+    font-size:15px;
+    letter-spacing:3px;
+    margin-bottom:6px;
+    font-family:'Courier New', monospace;
+  ">
+    <b>ATTENDANCE:</b> Joyfully Accepts
+  </div>
+<br>
+
+  <table cellpadding="0" cellspacing="0" border="0"
+    style="margin:auto;">
+
+    <tr>
+
+      <td align="center" style="padding:0 25px;">
+
+        <div style="
+          font-size:10px;
+          letter-spacing:3px;
+          margin-bottom:7px;
+        ">
+          <b>ADULTS</b>
+        </div>
+
+        <div style="
+           font-family:Georgia, serif;
+          font-size:28px;
+        ">
+          ${adults}
+          
+        </div>
+
+      </td>
+
+
+      <td align="center" style="padding:0 25px;">
+
+        <div style="
+          font-size:10px;
+          letter-spacing:3px;
+          margin-bottom:7px;
+        ">
+          <b>CHILDREN</b>
+        </div>
+
+        <div style="
+           font-family:Georgia, serif;
+          font-size:28px;
+        ">
+          ${children}
+        </div>
+
+      </td>
+
+    </tr>
+
+  </table>
+
+</td>
+</tr>
+
+</table>
+
+</td>
+</tr>
+
+
+<!-- WEDDING DETAILS -->
+<tr>
+<td align="center"
+  style="
+    padding:10px 35px 40px;
+  ">
+
+  
+
+ <div style="
+  background:#E7DFFB;
+  border-radius:18px;
+  padding:18px 20px;
+  font-size:15px;
+  line-height:1.8;
+  letter-spacing:1px;
+">
+<div style="
+     font-family:Georgia, serif;
+    font-size:20px;
+    margin-bottom:12px;
+  ">
+    The Details
+  </div>
+
+  <strong>WHEN:</strong>  January 30, 2027<br>
+  <strong>WHERE:</strong> InterContinental Ras Al Khaimah Mina Al Arab Resort & Spa
+<div style="
+  margin-top:20px;
+  text-align:center;
+">
+
+  <a
+    href="https://www.google.com/maps/dir//InterContinental+Ras+Al+Khaimah+Mina+Al+Arab+Resort+%26+Spa,+an+IHG+Hotel,+Hayat+Island+-+Al+Riffa+-+Ras+Al+Khaimah/@25.7263906,55.968277,59291m/data=!3m1!1e3!4m8!4m7!1m0!1m5!1m1!1s0x3ef60b2815555669:0x3eb3fbb57c873d70!2m2!1d55.8471346!2d25.7258943"
+    target="_blank"
+   style="
+      display:inline-block;
+      background:white;
+      color:black;
+      text-decoration:none;
+      padding:14px 24px;
+      font-family:'Courier New', monospace;
+      font-size:12px;
+      letter-spacing:2px;
+    "
+  >
+    <strong>FIND ON GOOGLE MAPS</strong>
+  </a>
+
+</div>
+</div>
+
+<!-- GOOGLE MAPS BUTTON -->
+
+
+
+</td>
+</tr>
+
+
+<!-- CLOSING -->
+<tr>
+<td align="center"
+  style="
+    padding:10px 35px 45px;
+  ">
+
+  <div style="
+     font-family:Georgia, serif;
+    font-size:25px;
+    margin-bottom:15px;
+  ">
+    We can't wait to celebrate with you!
+  </div>
+
+  <div style="
+    font-size:15px;
+    line-height:1.8;
+  ">
+    With love,<br>
+    <strong>Pearl &amp; Johann</strong>
+  </div>
+
+</td>
+</tr>
+
+
+<!-- FOOTER -->
+<tr>
+<td align="center"
+  style="
+    background:#A788FD;
+    color:#ffffff;
+    padding:20px;
+    font-size:9px;
+    letter-spacing:2px;
+    line-height:1.8;
+  ">
+
+  PEARL &amp; JOHANN
+  &nbsp;&nbsp; | &nbsp;&nbsp;
+  JANUARY 30, 2027
+
+</td>
+</tr>
+
+
+</table>
+
+</td>
+</tr>
+
+</table>
+
+</body>
+</html>
