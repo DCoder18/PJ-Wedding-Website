@@ -442,11 +442,12 @@ body.menu-open {
   border-radius: 28px;
   padding: 3rem 4vw;
   max-width: 1200px;
-  margin: 0 auto 3rem;
+  margin: 0 auto;
 }
 
 .info-card.info-card--venue {
   background: var(--color-green-100);
+  margin: 0 auto 4rem;
 }
 
 
@@ -516,7 +517,7 @@ body.menu-open {
 /* ---- Zigzag timeline ---- */
 .timeline {
   max-width: 1200px;
-  margin: 0 auto;
+  margin: 0 auto 4rem;
 }
 
 .timeline-image {
@@ -566,7 +567,6 @@ body.menu-open {
 .accomodation-section {
   padding: 5rem 6rem 0rem 6rem;
   background: var(--color-white);
-  margin: 5rem 0;
 }
 
 .info-card-acc {
@@ -771,16 +771,17 @@ body.menu-open {
 
 .gifts-small {
   font-family: var(--font-mono);
-  font-size: 0.8rem;
+  font-size: 1rem;
   margin-bottom: 1.5rem;
 }
 
 .gifts-message {
   font-family: var(--font-mono);
-  font-size: 0.9rem;
+  font-size: 1.1rem;
   font-weight: 500;
   line-height: 1.8;
   letter-spacing: 0.2em;
+  text-transform: uppercase;
 }
 
 .bank-details-btn {
@@ -884,20 +885,18 @@ body.menu-open {
 .rsvp-form input[type="text"],
 .rsvp-form input[type="email"] {
   width: 100%;
-
   background: var(--color-beige);
-
   border: 1px solid #ddd;
-
   padding: 1rem;
-
   font-family: var(--font-mono);
+}
 
+.rsvp-form input[type="text"] {
   margin-bottom: 1rem;
 }
 
 .rsvp-field {
-  margin-top: 2rem;
+  margin-top: 2.8rem;
 }
 
 .rsvp-label {
@@ -995,9 +994,13 @@ body.menu-open {
   text-align: center;
 
   font-family: var(--font-mono);
-  font-size: 0.65rem;
+  font-size: 0.8rem;
 
   letter-spacing: 0.25em;
+}
+
+.rsvp-deadline-date {
+  font-weight: 500;
 }
 
 .radio-row input[type="radio"] {
@@ -1161,7 +1164,7 @@ body.menu-open {
   margin: 0;
 
   font-family: var(--font-mono);
-  font-size: 0.8rem;
+  font-size: 1rem;
   font-weight: 500;
   letter-spacing: 0.35em;
 }
@@ -1204,7 +1207,7 @@ body.menu-open {
   color: var(--color-text);
 
   font-family: var(--font-mono);
-  font-size: 0.85rem;
+  font-size: 1rem;
   font-weight: 500;
   line-height: 1.4;
   letter-spacing: 0.32em;
@@ -1285,7 +1288,7 @@ body.menu-open {
   padding: 0 3rem 1.35rem 0;
 
   font-family: var(--font-mono);
-  font-size: 0.78rem;
+  font-size: 1rem;
   font-weight: 300;
   line-height: 1.7;
   letter-spacing: 0.04em;
@@ -1294,6 +1297,19 @@ body.menu-open {
 /* Space only between paragraphs inside an OPEN answer */
 .faq-answer p + p {
   padding-top: 0.5rem;
+}
+
+.faq-answer ul {
+  margin: 0 0 1.35rem 0;
+  padding: 0 3rem 0 0;
+}
+
+.faq-answer li {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  font-weight: 300;
+  line-height: 1.7;
+  letter-spacing: 0.04em;
 }
 
 /* =====================================================
