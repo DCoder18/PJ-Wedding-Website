@@ -104,9 +104,19 @@ img {
 .site-header {
   background: var(--color-purple-100);
   position: relative;
+  padding-top: var(--nav-height);
 }
 
 .nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  background: var(--color-purple-100);
+}
+
+.nav-inner {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -170,7 +180,7 @@ img {
 /* ------------------------- */
 .mobile-menu {
   display: none;
-  position: absolute;
+  position: fixed;
   top: 100%;
   left: 0;
   right: 0;
@@ -632,9 +642,12 @@ body.menu-open {
 /* Mobile                     */
 /* ------------------------- */
 @media (max-width: 720px) {
-  .nav {
+  :root {
+    --nav-height: 64px;
+  }
+
+  .nav-inner {
     padding: 0 5vw;
-    height: 64px;
     justify-content: space-between;
   }
 
