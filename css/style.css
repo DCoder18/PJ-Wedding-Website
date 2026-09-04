@@ -821,7 +821,7 @@ body.menu-open {
 
   font-family: var(--font-mono);
   font-size: var(--fs-micro);
-  letter-spacing: 0.15em;
+  letter-spacing: 3px;
 
   cursor: pointer;
 }
@@ -1161,6 +1161,21 @@ body.menu-open {
   background: var(--color-beige);
 }
 
+@media (max-width: 900px) {
+  .faq-section {
+    display: block;
+  }
+
+  .faq-heading-col {
+    margin-bottom: 2.5rem;
+    text-align: center;
+  }
+
+  .faq-title-line {
+    margin: 0.7rem auto 1.5rem !important;
+  }
+}
+
 
 /* ---------- FAQ heading ---------- */
 
@@ -1395,7 +1410,7 @@ body.menu-open {
   gap: 0.8rem;
 
   font-family: var(--font-mono);
-  font-size: var(--fs-micro);
+  font-size: var(--fs-small);
   letter-spacing: 0.18em;
 }
 
@@ -1412,6 +1427,12 @@ body.menu-open {
   justify-content: center;
 
   font-size: 1.1rem;
+}
+
+.contact-icon img {
+  width: 56px;
+  height: 56px;
+  object-fit: contain;
 }
 
 .contact-footer {
