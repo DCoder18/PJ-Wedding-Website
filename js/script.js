@@ -149,11 +149,11 @@ if (rsvpForm) {
       email: formData.get('email'),
       attendance: attendance,
       adults:
-        attendance === 'Regretfully Declines'
+        attendance === "I won't be attending"
           ? 0
           : Number(formData.get('adults') || 0),
       children:
-        attendance === 'Regretfully Declines'
+        attendance === "I won't be attending"
           ? 0
           : Number(formData.get('children') || 0)
     };

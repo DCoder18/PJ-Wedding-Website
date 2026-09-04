@@ -30,6 +30,14 @@
 
   --nav-height: 90px;
   --max-width: 1680px;
+
+  /* Type scale — shared sizes so headings/body/labels stay consistent across sections */
+  --fs-hero: clamp(2.75rem, 8vw, 90px);
+  --fs-section-title: clamp(2.5rem, 5vw, 4.5rem);
+  --fs-subheading: clamp(2.75rem, 3vw, 3rem);
+  --fs-body: 1rem;
+  --fs-small: 0.85rem;
+  --fs-micro: 0.75rem;
 }
 
 /* ------------------------- */
@@ -71,7 +79,7 @@ img {
   align-items: center;
   justify-content: center;
   font-family: var(--font-mono);
-  font-size: 0.85rem;
+  font-size: var(--fs-small);
   font-weight: 500;
   letter-spacing: 5px;
   text-transform: uppercase;
@@ -291,7 +299,7 @@ body.menu-open {
 .hero-title {
   font-family: var(--font-display);
   font-weight: normal;
-  font-size: clamp(2.75rem, 8vw, 90px);
+  font-size: var(--fs-hero);
   line-height: 1;
 }
 
@@ -362,7 +370,7 @@ body.menu-open {
   .meet-heading {
     font-family: var(--font-display);
     font-weight: normal;
-    font-size: clamp(2.25rem, 5vw, 3.75rem); /* 60px at desktop */
+    font-size: var(--fs-section-title);
     letter-spacing: 0.02em;
   }
 
@@ -397,7 +405,7 @@ body.menu-open {
   .meet-parent {
     font-family: var(--font-mono);
     font-weight: 300;
-    font-size: 1rem; /* 16px */
+    font-size: var(--fs-body);
     letter-spacing: 2px;
     color: var(--color-text);
   }
@@ -429,7 +437,7 @@ body.menu-open {
 .details-title {
   font-family: var(--font-display);
   font-weight: normal;
-  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-size: var(--fs-section-title);
   letter-spacing: 0.02em;
 }
 
@@ -459,7 +467,7 @@ body.menu-open {
 .info-card-heading {
   font-family: var(--font-display);
   font-weight: normal;
-  font-size: clamp(2.75rem, 3vw, 3rem);
+  font-size: var(--fs-subheading);
   margin-bottom: 0.75rem;
 }
 
@@ -480,7 +488,7 @@ body.menu-open {
 
 .info-card-intro {
   font-family: var(--font-mono);
-  font-size: 1rem;
+  font-size: var(--fs-body);
   letter-spacing: 1px;
   margin-bottom: 1.5rem;
 }
@@ -488,7 +496,7 @@ body.menu-open {
 .info-card-box {
   font-family: var(--font-mono);
   font-weight: 500;
-  font-size: clamp(.5rem, 3vw, 1.1rem);
+  font-size: clamp(.85rem, 3vw, 1.1rem);
   letter-spacing: 0.06em;
   text-transform: uppercase;
   max-width: 526px;
@@ -560,6 +568,25 @@ body.menu-open {
 }
 
 
+/* ---- Photos section ---- */
+.photos-section {
+  background: var(--color-beige);
+  padding: 5rem 6vw;
+}
+
+.info-card.info-card--photos {
+  background: var(--color-purple-100);
+}
+
+.info-card-underline--photos {
+  background: var(--color-white);
+}
+
+.info-card-box.info-card-box--photos {
+  background: #ffffff8b;
+  max-width: 100%;
+}
+
 
 /* ------------------------- */
 /* The Accomodation section        */
@@ -571,7 +598,7 @@ body.menu-open {
 
 .info-card-acc {
   font-family: var(--font-mono);
-  font-size: 1rem;
+  font-size: var(--fs-body);
   letter-spacing: 1px;
   margin-bottom: 1.5rem;
   text-align: center;
@@ -754,7 +781,7 @@ body.menu-open {
 .gifts-title {
   font-family: var(--font-display);
   font-weight: normal;
-  font-size: clamp(2.5rem, 4vw, 4rem);
+  font-size: var(--fs-section-title);
 }
 
 .gifts-line {
@@ -771,17 +798,18 @@ body.menu-open {
 
 .gifts-small {
   font-family: var(--font-mono);
-  font-size: 1rem;
-  margin-bottom: 1.5rem;
-}
-
-.gifts-message {
-  font-family: var(--font-mono);
   font-size: 1.1rem;
   font-weight: 500;
   line-height: 1.8;
   letter-spacing: 0.2em;
   text-transform: uppercase;
+  margin-bottom: 1.5rem;
+}
+
+.gifts-message {
+  font-family: var(--font-mono);
+  font-size: var(--fs-body);
+  line-height: 1.8;
 }
 
 .bank-details-btn {
@@ -792,7 +820,7 @@ body.menu-open {
   border: none;
 
   font-family: var(--font-mono);
-  font-size: 0.75rem;
+  font-size: var(--fs-micro);
   letter-spacing: 0.15em;
 
   cursor: pointer;
@@ -829,7 +857,7 @@ body.menu-open {
   width: 100%;
   font-family: var(--font-display);
   font-weight: normal;
-  font-size: clamp(3rem, 5vw, 5rem);
+  font-size: var(--fs-section-title);
   color: #ffffff;
   margin-bottom: 2rem;
   text-align: center;
@@ -901,7 +929,7 @@ body.menu-open {
 
 .rsvp-label {
   font-family: var(--font-mono);
-  font-size: 0.75rem;
+  font-size: var(--fs-micro);
 
   letter-spacing: 0.35em;
 
@@ -917,7 +945,7 @@ body.menu-open {
   margin-bottom: 0.8rem;
 
   font-family: var(--font-mono);
-  font-size: 0.85rem;
+  font-size: var(--fs-small);
 
   cursor: pointer;
 }
@@ -939,7 +967,7 @@ body.menu-open {
   gap: 0.7rem;
 
   font-family: var(--font-mono);
-  font-size: 0.8rem;
+  font-size: var(--fs-small);
 }
 
 .guest-counter button {
@@ -977,7 +1005,7 @@ body.menu-open {
   color: #ffffff;
 
   font-family: var(--font-mono);
-  font-size: 0.8rem;
+  font-size: var(--fs-small);
 
   letter-spacing: 0.4em;
 
@@ -994,7 +1022,7 @@ body.menu-open {
   text-align: center;
 
   font-family: var(--font-mono);
-  font-size: 0.8rem;
+  font-size: var(--fs-micro);
 
   letter-spacing: 0.25em;
 }
@@ -1041,12 +1069,12 @@ body.menu-open {
   .gifts-small {
     font-size: 0.7rem;
     line-height: 1.6;
+    letter-spacing: 0.16em;
   }
 
   .gifts-message {
     font-size: 0.7rem;
     line-height: 1.8;
-    letter-spacing: 0.16em;
   }
 
   .gifts-message br {
@@ -1101,7 +1129,7 @@ body.menu-open {
 
 .rsvp-success h3 {
   font-family: var(--font-display);
-  font-size: clamp(3rem, 5vw, 5rem);
+  font-size: var(--fs-section-title);
   font-weight: normal;
   color: var(--color-purple-800);
 
@@ -1144,7 +1172,7 @@ body.menu-open {
   margin: 0;
 
   font-family: var(--font-display);
-  font-size: clamp(3rem, 5vw, 4.5rem);
+  font-size: var(--fs-section-title);
   font-weight: normal;
   line-height: 1;
 }
@@ -1288,7 +1316,7 @@ body.menu-open {
   padding: 0 3rem 1.35rem 0;
 
   font-family: var(--font-mono);
-  font-size: 1rem;
+  font-size: var(--fs-body);
   font-weight: 300;
   line-height: 1.7;
   letter-spacing: 0.04em;
@@ -1306,7 +1334,7 @@ body.menu-open {
 
 .faq-answer li {
   font-family: var(--font-mono);
-  font-size: 0.78rem;
+  font-size: var(--fs-body);
   font-weight: 300;
   line-height: 1.7;
   letter-spacing: 0.04em;
@@ -1340,14 +1368,14 @@ body.menu-open {
 .contact-title {
   font-family: var(--font-display);
   font-weight: normal;
-  font-size: clamp(3rem, 5vw, 4.5rem);
+  font-size: var(--fs-section-title);
 }
 
 .contact-copy {
   margin: 2rem auto;
 
   font-family: var(--font-mono);
-  font-size: 0.8rem;
+  font-size: var(--fs-body);
   line-height: 1.8;
   letter-spacing: 0.05em;
 }
@@ -1367,7 +1395,7 @@ body.menu-open {
   gap: 0.8rem;
 
   font-family: var(--font-mono);
-  font-size: 0.75rem;
+  font-size: var(--fs-micro);
   letter-spacing: 0.18em;
 }
 
