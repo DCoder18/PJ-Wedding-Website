@@ -472,7 +472,7 @@ body.menu-open {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 6rem;
+  gap: 2rem;
   border-radius: 28px;
   padding: 3rem 4vw;
   max-width: 1200px;
@@ -483,7 +483,6 @@ body.menu-open {
   background: var(--color-green-100);
   margin: 0 auto 4rem;
 }
-
 
 
 .info-card--dresscode{
@@ -497,8 +496,6 @@ body.menu-open {
   margin-bottom: 0.75rem;
  
 }
-
-
 
 .info-card-underline {
   display: block;
@@ -519,6 +516,7 @@ body.menu-open {
   font-family: var(--font-mono);
   font-size: var(--fs-body);
   letter-spacing: 1px;
+  line-height: 24px;
   margin-bottom: 1.5rem;
 }
 
@@ -633,6 +631,7 @@ body.menu-open {
   font-family: var(--font-mono);
   font-size: var(--fs-body);
   letter-spacing: 1px;
+  line-height: 24px;
   margin-bottom: 1.5rem;
   text-align: center;
 }
@@ -772,9 +771,9 @@ body.menu-open {
     text-align: center;
   }
 
-  .timeline-image {
+  /* .timeline-image {
     aspect-ratio: 808 / 1600;
-  }
+  } */
 
   .accomodation-section {
   padding: 5rem 1rem 0rem 1rem;
@@ -788,6 +787,39 @@ body.menu-open {
   display: none;
 }
 
+.info-card-box.info-card-box--photos {
+  background: #ffffff8b;
+  max-width: 100%;
+}
+
+.info-card-intro {
+  font-family: var(--font-mono);
+  font-size: var(--fs-small);
+  letter-spacing: 1px;
+  line-height: 22px;
+  margin-bottom: 1.5rem;
+}
+
+.info-card-acc {
+  font-family: var(--font-mono);
+  font-size: var(--fs-small);
+  letter-spacing: 1px;
+  line-height: 22px;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.info-card-box {
+  font-family: var(--font-mono);
+  font-weight: 500;
+  font-size: 15px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  max-width: 526px;
+  padding: 20px 20px;
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+}
 
 }
 
@@ -837,7 +869,7 @@ body.menu-open {
   font-size: 1.1rem;
   font-weight: 500;
   line-height: 1.8;
-  letter-spacing: 0.2em;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
   margin-bottom: 1.5rem;
 }
@@ -859,10 +891,10 @@ body.menu-open {
 
   font-family: var(--font-mono);
   font-weight: 500;
-  font-size: 16px;
+  font-size: var(--fs-small);
   line-height: 135%;
 
-  letter-spacing: 3px;
+  letter-spacing: 5px;
   text-align: center;
   text-transform: uppercase;
 
@@ -943,7 +975,7 @@ body.menu-open {
 
 .rsvp-form-title {
   font-family: var(--font-mono);
-  font-size: 1rem;
+  font-size: 1.1rem;
   font-weight: 500;
 
   letter-spacing: 0.3em;
@@ -964,6 +996,7 @@ body.menu-open {
   border: 1px solid #ddd;
   padding: 1rem;
   font-family: var(--font-mono);
+  font-size: var(--fs-body);
 }
 
 .rsvp-form input[type="text"] {
@@ -977,7 +1010,7 @@ body.menu-open {
 
 .rsvp-label {
   font-family: var(--font-mono);
-  font-size: var(--fs-micro);
+  font-size: var(--fs-small);
 
   letter-spacing: 0.35em;
 
@@ -994,7 +1027,7 @@ body.menu-open {
   margin-bottom: 0.8rem;
 
   font-family: var(--font-mono);
-  font-size: var(--fs-small);
+  font-size: var(--fs-body);
 
   cursor: pointer;
 }
@@ -1016,7 +1049,7 @@ body.menu-open {
   gap: 0.7rem;
 
   font-family: var(--font-mono);
-  font-size: var(--fs-small);
+  font-size: var(--fs-body);
 }
 
 .guest-counter button {
@@ -1030,14 +1063,13 @@ body.menu-open {
   cursor: pointer;
 
   font-family: var(--font-mono);
-  font-size: 1rem;
+  font-size: var(--fs-body);
 }
 
 .counter-value {
   min-width: 15px;
   text-align: center;
 }
-
 
 /* RSVP button */
 
@@ -1071,13 +1103,13 @@ body.menu-open {
   text-align: center;
 
   font-family: var(--font-mono);
-  font-size: var(--fs-micro);
+  font-size: var(--fs-small);
 
   letter-spacing: 0.25em;
 }
 
 .rsvp-deadline-date {
-  font-weight: 500;
+  font-weight: 600;
 }
 
 .radio-row input[type="radio"] {
@@ -1116,14 +1148,14 @@ body.menu-open {
   }
 
   .gifts-small {
-    font-size: 0.7rem;
+  font-size: 15px;
     line-height: 1.6;
-    letter-spacing: 0.16em;
+  letter-spacing: 0.06em;
   }
 
   .gifts-message {
-    font-size: 0.7rem;
-    line-height: 1.8;
+    font-size: var(--fs-small);
+    line-height: 22px;
   }
 
   .gifts-message br {
@@ -1168,6 +1200,66 @@ body.menu-open {
     flex-direction: column;
     gap: 1.5rem;
   }
+
+  
+.rsvp-form input[type="text"],
+.rsvp-form input[type="email"] {
+  width: 100%;
+  background: var(--color-beige);
+  border: 1px solid #ddd;
+  padding: 1rem;
+  font-family: var(--font-mono);
+  font-size: var(--fs-small);
+}
+
+.radio-row {
+  display: flex;
+  align-items: center;
+
+  gap: 0.6rem;
+
+  margin-bottom: 0.8rem;
+
+  font-family: var(--font-mono);
+  font-size: var(--fs-small);
+
+  cursor: pointer;
+}
+
+.guest-counter {
+  display: flex;
+  align-items: center;
+
+  gap: 0.7rem;
+
+  font-family: var(--font-mono);
+  font-size: var(--fs-small);
+}
+
+.guest-counter button {
+  width: 32px;
+  height: 32px;
+
+  border: none;
+
+  background: var(--color-beige);
+
+  cursor: pointer;
+
+  font-family: var(--font-mono);
+  font-size: var(--fs-small);
+}
+
+.rsvp-deadline {
+  margin-top: 1.2rem;
+
+  text-align: center;
+
+  font-family: var(--font-mono);
+  font-size: var(--fs-micro);
+
+  letter-spacing: 0.25em;
+}
 
 }
 
@@ -1569,9 +1661,9 @@ text-align: right;
 
   .faq-question {
     padding: 1.15rem 0;
-    font-size: 0.7rem;
+    font-size: 15px;
     line-height: 1.5;
-    letter-spacing: 0.28em;
+ letter-spacing: 0.06em;
   }
 
   .faq-icon {
@@ -1580,7 +1672,7 @@ text-align: right;
 
   .faq-answer p {
     padding: 0 1rem 1.25rem 0;
-    font-size: 0.7rem;
+    font-size: 14px;
     line-height: 1.7;
   }
 
@@ -1602,7 +1694,7 @@ text-align: right;
   }
 
   .contact-copy {
-    font-size: 0.7rem;
+    font-size: 14px;
   }
 
   .contact-copy br {
@@ -1620,12 +1712,14 @@ text-align: right;
   }
 
   .contact-item {
-    font-size: 0.65rem;
+    font-size: 14px;
+    align-items: center;
   }
 
   .contact-icon {
     width: 34px;
     height: 34px;
+
   }
 
   .contact-footer {
