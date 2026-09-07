@@ -9,6 +9,28 @@ function openMobileMenu() {
   hamburger.setAttribute('aria-expanded', 'true');
 }
 
+// =====================================================
+// NAVBAR BACKGROUND ON SCROLL
+// =====================================================
+
+const navbar = document.querySelector('.nav');
+
+function updateNavbarBackground() {
+
+  if (!navbar) return;
+
+  if (window.scrollY > 50) {
+    navbar.classList.add('nav-scrolled');
+  } else {
+    navbar.classList.remove('nav-scrolled');
+  }
+
+}
+
+window.addEventListener('scroll', updateNavbarBackground);
+
+updateNavbarBackground();
+
 function closeMobileMenu() {
   mobileMenu.classList.remove('is-open');
   document.body.classList.remove('menu-open');
@@ -448,3 +470,4 @@ if (rsvpForm) {
   );
 
 }
+

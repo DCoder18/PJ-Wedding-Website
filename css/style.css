@@ -108,12 +108,27 @@ img {
 }
 
 .nav {
-  position: fixed;
+ position: fixed;
   top: 0;
   left: 0;
   right: 0;
+
   z-index: 100;
-  background: var(--color-purple-100);
+
+  /* Transparent when at top */
+  background: transparent;
+
+  /* Smooth transition when scrolling */
+  transition:
+    background-color 0.3s ease,
+    box-shadow 0.3s ease
+}
+
+.nav.nav-scrolled {
+  background: #ffffff;
+
+  /* Optional subtle shadow */
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
 }
 
 .nav-inner {
@@ -134,6 +149,7 @@ img {
 
 .nav-links a {
   font-family: var(--font-mono);
+  
   font-size: 1rem;
   letter-spacing: 1px;
   color: var(--color-nav-text);
@@ -456,7 +472,7 @@ body.menu-open {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 2rem;
+  gap: 6rem;
   border-radius: 28px;
   padding: 3rem 4vw;
   max-width: 1200px;
@@ -482,9 +498,7 @@ body.menu-open {
  
 }
 
-.phts {
-   margin-right: 30px;
-}
+
 
 .info-card-underline {
   display: block;
@@ -879,7 +893,7 @@ body.menu-open {
 
 .rsvp-photo-side {
   background: var(--color-purple-800);
-  padding: 4rem 6vw;
+  padding: 4rem 2vw;
 
   display: flex;
   flex-direction: column;
@@ -958,6 +972,7 @@ body.menu-open {
 
 .rsvp-field {
   margin-top: 2.8rem;
+
 }
 
 .rsvp-label {
@@ -967,6 +982,7 @@ body.menu-open {
   letter-spacing: 0.35em;
 
   margin-bottom: 1.2rem;
+    font-weight: bold;
 }
 
 .radio-row {
@@ -1481,6 +1497,15 @@ body.menu-open {
   font-family: var(--font-mono);
   font-size: 0.6rem;
   letter-spacing: 0.1em;
+  font-family: DM Mono;
+font-weight: 500;
+font-style: Medium;
+font-size: 16px;
+leading-trim: NONE;
+line-height: 155%;
+letter-spacing: 0px;
+text-align: right;
+
 }
 
 /* =====================================================
