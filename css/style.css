@@ -1,37 +1,30 @@
 /* ------------------------- */
-/* Fonts                     */
+/* Fonts */
 /* ------------------------- */
 @font-face {
-  font-family: 'Belove Melody';
-  src: url('../assets/fonts/BeloveMelody-Regular.otf') format('opentype');
+  font-family: "Belove Melody";
+  src: url("../assets/fonts/BeloveMelody-Regular.otf") format("opentype");
   font-weight: normal;
   font-style: normal;
   font-display: swap;
 }
 
 /* ------------------------- */
-/* Custom properties dasdasda        */
+/* Custom properties */
 /* ------------------------- */
 :root {
-  --color-purple-100: #E7DFFB;
-  --color-purple-800: #A788FD;
-
-  --color-beige: #F8F7F3;
+  --color-purple-100: #e7dffb;
+  --color-purple-800: #a788fd;
+  --color-beige: #f8f7f3;
   --color-white: #ffffff;
-
   --color-text: #000000;
   --color-nav-text: #1E1E1E;
-
-  --color-green-100: #CEDCC1;
-  --color-green-800: #92B579;
-
-  --font-mono: 'DM Mono', monospace;
-  --font-display: 'Belove Melody', cursive;
-
+  --color-green-100: #cedcc1;
+  --color-green-800: #92b579;
+  --font-mono: "DM Mono", monospace;
+  --font-display: "Belove Melody", cursive;
   --nav-height: 90px;
   --max-width: 1680px;
-
-  /* Type scale — shared sizes so headings/body/labels stay consistent across sections */
   --fs-hero: clamp(2.75rem, 8vw, 90px);
   --fs-section-title: clamp(2.5rem, 5vw, 4.5rem);
   --fs-subheading: clamp(2.75rem, 3vw, 3rem);
@@ -41,7 +34,7 @@
 }
 
 /* ------------------------- */
-/* Reset / base               */
+/* Reset / base */
 /* ------------------------- */
 * {
   margin: 0;
@@ -72,7 +65,7 @@ img {
 }
 
 /* ------------------------- */
-/* Buttons                    */
+/* Buttons */
 /* ------------------------- */
 .btn {
   display: inline-flex;
@@ -99,7 +92,7 @@ img {
 }
 
 /* ------------------------- */
-/* Header / Nav                */
+/* Header / Nav */
 /* ------------------------- */
 .site-header {
   background: var(--color-purple-100);
@@ -108,26 +101,17 @@ img {
 }
 
 .nav {
- position: fixed;
+  position: fixed;
   top: 0;
   left: 0;
   right: 0;
-
   z-index: 100;
-
-  /* Transparent when at top */
   background: transparent;
-
-  /* Smooth transition when scrolling */
-  transition:
-    background-color 0.3s ease,
-    box-shadow 0.3s ease
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .nav.nav-scrolled {
   background: #ffffff;
-
-  /* Optional subtle shadow */
   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
 }
 
@@ -149,7 +133,6 @@ img {
 
 .nav-links a {
   font-family: var(--font-mono);
-  
   font-size: 1rem;
   letter-spacing: 1px;
   color: var(--color-nav-text);
@@ -172,7 +155,7 @@ img {
 }
 
 /* ------------------------- */
-/* Hamburger (mobile only)    */
+/* Hamburger (mobile only) */
 /* ------------------------- */
 .hamburger {
   display: none;
@@ -192,7 +175,7 @@ img {
 }
 
 /* ------------------------- */
-/* Mobile menu overlay        */
+/* Mobile menu overlay */
 /* ------------------------- */
 .mobile-menu {
   display: none;
@@ -277,7 +260,7 @@ body.menu-open {
 }
 
 /* ------------------------- */
-/* Rolling image strip        */
+/* Rolling image strip */
 /* ------------------------- */
 .scroll-strip {
   width: 100%;
@@ -304,18 +287,25 @@ body.menu-open {
 }
 
 @keyframes scroll-left {
-  from { transform: translateX(0); }
-  to   { transform: translateX(-50%); }
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+
 }
 
 @media (prefers-reduced-motion: reduce) {
   .scroll-track {
     animation: none;
   }
+
 }
 
 /* ------------------------- */
-/* Hero                       */
+/* Hero */
 /* ------------------------- */
 .hero {
   text-align: center;
@@ -345,100 +335,98 @@ body.menu-open {
   margin: 0 auto;
 }
 
+/* ------------------------- */
+/* Meet the Bride / Groom */
+/* ------------------------- */
+.meet {
+  display: flex;
+  width: 100%;
+}
 
-  /* ------------------------- */
-  /* Meet the Bride / Groom     */
-  /* ------------------------- */
-  .meet {
-    display: flex;
-    width: 100%;
-  }
+.meet-col {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 5.5rem 3vw;
+}
 
-  .meet-col {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    padding: 5.5rem 3vw;
-  }
+.meet-bride {
+  background: #f8f7f3;
+}
 
-  .meet-bride {
-    background: #F8F7F3;
-  }
+.meet-groom {
+  background: #ffffff;
+}
 
-  .meet-groom {
-    background: #ffffff;
-  }
+.meet-photo-wrap {
+  width: 100%;
+  max-width: 420px;
+  aspect-ratio: 730 / 884;
+  overflow: hidden;
+  border: 2px solid var(--color-purple-800);
+  margin-bottom: 2.5rem;
+}
 
-  .meet-photo-wrap {
-    width: 100%;
-    max-width: 420px;
-    aspect-ratio: 730 / 884;
-    overflow: hidden;
-    border: 2px solid var(--color-purple-800);
-    margin-bottom: 2.5rem;
-  }
+.meet-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: grayscale(100%);
+  transition: filter 0.5s ease;
+}
 
-  .meet-photo {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    filter: grayscale(100%);
-    transition: filter 0.5s ease;
-  }
+.meet-photo-wrap:hover .meet-photo,
+.meet-photo-wrap.is-colored .meet-photo {
+  filter: grayscale(0%);
+}
 
-  .meet-photo-wrap:hover .meet-photo,
-  .meet-photo-wrap.is-colored .meet-photo {
-    filter: grayscale(0%);
-  }
+.meet-heading {
+  font-family: var(--font-display);
+  font-weight: normal;
+  font-size: var(--fs-section-title);
+  letter-spacing: 0.02em;
+}
 
-  .meet-heading {
-    font-family: var(--font-display);
-    font-weight: normal;
-    font-size: var(--fs-section-title);
-    letter-spacing: 0.02em;
-  }
+.title-divider {
+  width: 111px;
+  height: 1px;
+  margin: 1.5rem 0 2rem;
+  border: none;
+  background: var(--color-green-800);
+}
 
-  .title-divider {
-    width: 111px;
-    height: 1px;
-    margin: 1.5rem 0 2rem;
-    border: none;
-    background: var(--color-green-800);
-  }
+.title-divider.title-divider--details {
+  display: none;
+}
 
-  .title-divider.title-divider--details {
-    display: none;
-  }
+.meet-name-pill {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  max-width: 100%;
+  height: 35px;
+  font-family: var(--font-mono);
+  font-weight: 500;
+  font-size: clamp(.75rem, 2vw, 1.25rem);
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  background: var(--color-purple-100);
+  margin-bottom: 1.25rem;
+}
 
-  .meet-name-pill {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 20px;
-    max-width: 100%;
-    height: 35px;
-    font-family: var(--font-mono);
-    font-weight: 500;
-    font-size: clamp(.75rem, 2vw, 1.25rem);
-    letter-spacing: 5px;
-    text-transform: uppercase;
-    background: var(--color-purple-100);
-    margin-bottom: 1.25rem;
-  }
-
-  .meet-parent {
-    font-family: var(--font-mono);
-    font-weight: 300;
-    font-size: var(--fs-body);
-    letter-spacing: 2px;
-    color: var(--color-text);
-  }
-
+.meet-parent {
+  font-family: var(--font-mono);
+  font-weight: 300;
+  font-size: var(--fs-body);
+  letter-spacing: 2px;
+  color: var(--color-text);
+}
 
 /* ------------------------- */
-/* The Details section        */
+/* The Details section */
 /* ------------------------- */
 .details-section {
   padding: 5rem 6vw 6rem;
@@ -484,8 +472,7 @@ body.menu-open {
   margin: 0 auto 4rem;
 }
 
-
-.info-card--dresscode{
+.info-card--dresscode {
   background: var(--color-white);
 }
 
@@ -494,21 +481,18 @@ body.menu-open {
   font-weight: normal;
   font-size: var(--fs-subheading);
   margin-bottom: 0.75rem;
- 
 }
 
 .info-card-underline {
   display: block;
-  /* max-width: 130px; */
   height: 2px;
-  /* opacity: 0.6; */
 }
 
 .info-card-underline--venue {
   background: #fff;
 }
 
-.info-card-underline--dresscode{
+.info-card-underline--dresscode {
   background: var(--color-green-100);
 }
 
@@ -537,11 +521,11 @@ body.menu-open {
 }
 
 .info-card-box.info-card-box--address {
-  background: #F8F7F399;
+  background: #f8f7f399;
 }
 
 .info-card-box.info-card-box--dress {
-    background: var(--color-purple-100);
+  background: var(--color-purple-100);
 }
 
 .info-card-link {
@@ -586,9 +570,7 @@ body.menu-open {
 }
 
 /* ---- Banner Section ---- */
-
 .banner_pic {
-  max-width: auto;
   margin: 0 auto;
 }
 
@@ -597,7 +579,6 @@ body.menu-open {
   width: 100%;
   height: auto;
 }
-
 
 /* ---- Photos section ---- */
 .photos-section {
@@ -618,9 +599,8 @@ body.menu-open {
   max-width: 100%;
 }
 
-
 /* ------------------------- */
-/* The Accomodation section        */
+/* The Accomodation section */
 /* ------------------------- */
 .accomodation-section {
   padding: 5rem 6rem 0rem 6rem;
@@ -641,9 +621,8 @@ body.menu-open {
   text-align: center;
 }
 
-
 /* ------------------------- */
-/* Tablet                     */
+/* Tablet */
 /* ------------------------- */
 @media (max-width: 1024px) and (min-width: 721px) {
   .nav-links {
@@ -658,10 +637,11 @@ body.menu-open {
     height: 26vw;
     max-height: 320px;
   }
+
 }
 
 /* ------------------------- */
-/* Mobile                     */
+/* Mobile */
 /* ------------------------- */
 @media (max-width: 720px) {
   :root {
@@ -763,70 +743,65 @@ body.menu-open {
     text-align: center;
   }
 
-    .info-card-col-middle {
+  .info-card-col-middle {
     text-align: center;
   }
 
-   .info-card-col-right {
+  .info-card-col-right {
     text-align: center;
   }
-
-  /* .timeline-image {
-    aspect-ratio: 808 / 1600;
-  } */
 
   .accomodation-section {
-  padding: 5rem 1rem 0rem 1rem;
-}
+    padding: 5rem 1rem 0rem 1rem;
+  }
 
-.info-card-acc br{
-  display: none;
-}
+  .info-card-acc br {
+    display: none;
+  }
 
-.info-card-box--acc br{
-  display: none;
-}
+  .info-card-box--acc br {
+    display: none;
+  }
 
-.info-card-box.info-card-box--photos {
-  background: #ffffff8b;
-  max-width: 100%;
-}
+  .info-card-box.info-card-box--photos {
+    background: #ffffff8b;
+    max-width: 100%;
+  }
 
-.info-card-intro {
-  font-family: var(--font-mono);
-  font-size: var(--fs-small);
-  letter-spacing: 1px;
-  line-height: 22px;
-  margin-bottom: 1.5rem;
-}
+  .info-card-intro {
+    font-family: var(--font-mono);
+    font-size: var(--fs-small);
+    letter-spacing: 1px;
+    line-height: 22px;
+    margin-bottom: 1.5rem;
+  }
 
-.info-card-acc {
-  font-family: var(--font-mono);
-  font-size: var(--fs-small);
-  letter-spacing: 1px;
-  line-height: 22px;
-  margin-bottom: 1.5rem;
-  text-align: center;
-}
+  .info-card-acc {
+    font-family: var(--font-mono);
+    font-size: var(--fs-small);
+    letter-spacing: 1px;
+    line-height: 22px;
+    margin-bottom: 1.5rem;
+    text-align: center;
+  }
 
-.info-card-box {
-  font-family: var(--font-mono);
-  font-weight: 500;
-  font-size: 15px;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  max-width: 526px;
-  padding: 20px 20px;
-  margin-bottom: 1.5rem;
-  line-height: 1.6;
-}
+  .info-card-box {
+    font-family: var(--font-mono);
+    font-weight: 500;
+    font-size: 15px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    max-width: 526px;
+    padding: 20px 20px;
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+  }
 
 }
 
 /* =====================================================
    GIFTS SECTION
 ===================================================== */
-
 .gifts-section {
   background: var(--color-beige);
   padding: 5rem 6vw;
@@ -837,11 +812,9 @@ body.menu-open {
   margin: 0 auto;
   background: var(--color-green-100);
   border-radius: 28px;
-
   display: grid;
   grid-template-columns: 240px 1fr;
   align-items: center;
-
   padding: 3.5rem 5vw;
   gap: 4rem;
 }
@@ -849,7 +822,7 @@ body.menu-open {
 .gifts-title {
   font-family: var(--font-display);
   font-weight: normal;
-  font-size: var(--fs-section-title);
+  font-size: var(--fs-subheading);
 }
 
 .gifts-line {
@@ -882,27 +855,20 @@ body.menu-open {
 
 .bank-details-btn {
   display: inline-block;
-
   margin-top: 1.75rem;
   padding: 1rem 1.5rem;
-
   background: #ffffff;
   border: none;
-
   font-family: var(--font-mono);
   font-weight: 500;
   font-size: var(--fs-small);
   line-height: 135%;
-
   letter-spacing: 5px;
   text-align: center;
   text-transform: uppercase;
-
   color: #000000;
   text-decoration: none;
-
   cursor: pointer;
-
   transition: opacity 0.2s ease;
 }
 
@@ -913,20 +879,16 @@ body.menu-open {
 /* =====================================================
    RSVP SECTION
 ===================================================== */
-
 .rsvp-section {
   display: grid;
   grid-template-columns: 1fr 1fr;
   min-height: 650px;
 }
 
-
 /* LEFT PURPLE SIDE */
-
 .rsvp-photo-side {
   background: var(--color-purple-800);
   padding: 4rem 2vw;
-
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -946,25 +908,18 @@ body.menu-open {
   width: 100%;
   max-width: 470px;
   height: 500px;
-
   object-fit: cover;
   object-position: center;
-
   border: 2px solid #ffffff;
-
   filter: grayscale(100%);
 }
 
-
 /* RIGHT FORM SIDE */
-
 .rsvp-form-side {
   background: #ffffff;
-
   display: flex;
   align-items: center;
   justify-content: center;
-
   padding: 4rem 6vw;
 }
 
@@ -977,9 +932,7 @@ body.menu-open {
   font-family: var(--font-mono);
   font-size: 1.1rem;
   font-weight: 500;
-
   letter-spacing: 0.3em;
-
   margin-bottom: 2.5rem;
 }
 
@@ -1005,49 +958,37 @@ body.menu-open {
 
 .rsvp-field {
   margin-top: 2.8rem;
-
 }
 
 .rsvp-label {
   font-family: var(--font-mono);
   font-size: var(--fs-small);
-
   letter-spacing: 0.35em;
-
   margin-bottom: 1.2rem;
-    font-weight: bold;
+  font-weight: bold;
 }
 
 .radio-row {
   display: flex;
   align-items: center;
-
   gap: 0.6rem;
-
   margin-bottom: 0.8rem;
-
   font-family: var(--font-mono);
   font-size: var(--fs-body);
-
   cursor: pointer;
 }
 
-
 /* Guest counters */
-
 .guest-counts {
   display: flex;
   justify-content: space-between;
-
   gap: 2rem;
 }
 
 .guest-counter {
   display: flex;
   align-items: center;
-
   gap: 0.7rem;
-
   font-family: var(--font-mono);
   font-size: var(--fs-body);
 }
@@ -1055,13 +996,9 @@ body.menu-open {
 .guest-counter button {
   width: 32px;
   height: 32px;
-
   border: none;
-
   background: var(--color-beige);
-
   cursor: pointer;
-
   font-family: var(--font-mono);
   font-size: var(--fs-body);
 }
@@ -1072,24 +1009,16 @@ body.menu-open {
 }
 
 /* RSVP button */
-
 .rsvp-submit {
   width: 100%;
-
   margin-top: 2.5rem;
-
   padding: 1rem;
-
   border: none;
-
   background: var(--color-purple-800);
   color: #ffffff;
-
   font-family: var(--font-mono);
   font-size: var(--fs-small);
-
   letter-spacing: 0.4em;
-
   cursor: pointer;
 }
 
@@ -1099,12 +1028,9 @@ body.menu-open {
 
 .rsvp-deadline {
   margin-top: 1.2rem;
-
   text-align: center;
-
   font-family: var(--font-mono);
   font-size: var(--fs-small);
-
   letter-spacing: 0.25em;
 }
 
@@ -1119,10 +1045,11 @@ body.menu-open {
 /* =====================================================
    GIFTS + RSVP MOBILE
 ===================================================== */
-
 @media (max-width: 720px) {
-
   /* GIFTS */
+  .accomodation {
+    padding: 5px 15px !important;
+  }
 
   .gifts-section {
     padding: 3rem 5vw;
@@ -1131,16 +1058,13 @@ body.menu-open {
   .gifts-card {
     display: flex;
     flex-direction: column;
-
     text-align: center;
-
     padding: 3rem 7vw;
-
     gap: 1.5rem;
   }
 
   .gifts-title {
-    font-size: 3rem;
+    font-size: 2.2rem;
   }
 
   .gifts-line {
@@ -1148,9 +1072,9 @@ body.menu-open {
   }
 
   .gifts-small {
-  font-size: 15px;
+    font-size: 15px;
     line-height: 1.6;
-  letter-spacing: 0.06em;
+    letter-spacing: 0.06em;
   }
 
   .gifts-message {
@@ -1162,9 +1086,7 @@ body.menu-open {
     display: none;
   }
 
-
   /* RSVP */
-
   .rsvp-section {
     display: block;
   }
@@ -1201,65 +1123,51 @@ body.menu-open {
     gap: 1.5rem;
   }
 
-  
-.rsvp-form input[type="text"],
-.rsvp-form input[type="email"] {
-  width: 100%;
-  background: var(--color-beige);
-  border: 1px solid #ddd;
-  padding: 1rem;
-  font-family: var(--font-mono);
-  font-size: var(--fs-small);
-}
+  .rsvp-form input[type="text"],
+  .rsvp-form input[type="email"] {
+    width: 100%;
+    background: var(--color-beige);
+    border: 1px solid #ddd;
+    padding: 1rem;
+    font-family: var(--font-mono);
+    font-size: var(--fs-small);
+  }
 
-.radio-row {
-  display: flex;
-  align-items: center;
+  .radio-row {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    margin-bottom: 0.8rem;
+    font-family: var(--font-mono);
+    font-size: var(--fs-small);
+    cursor: pointer;
+  }
 
-  gap: 0.6rem;
+  .guest-counter {
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+    font-family: var(--font-mono);
+    font-size: var(--fs-small);
+  }
 
-  margin-bottom: 0.8rem;
+  .guest-counter button {
+    width: 32px;
+    height: 32px;
+    border: none;
+    background: var(--color-beige);
+    cursor: pointer;
+    font-family: var(--font-mono);
+    font-size: var(--fs-small);
+  }
 
-  font-family: var(--font-mono);
-  font-size: var(--fs-small);
-
-  cursor: pointer;
-}
-
-.guest-counter {
-  display: flex;
-  align-items: center;
-
-  gap: 0.7rem;
-
-  font-family: var(--font-mono);
-  font-size: var(--fs-small);
-}
-
-.guest-counter button {
-  width: 32px;
-  height: 32px;
-
-  border: none;
-
-  background: var(--color-beige);
-
-  cursor: pointer;
-
-  font-family: var(--font-mono);
-  font-size: var(--fs-small);
-}
-
-.rsvp-deadline {
-  margin-top: 1.2rem;
-
-  text-align: center;
-
-  font-family: var(--font-mono);
-  font-size: var(--fs-micro);
-
-  letter-spacing: 0.25em;
-}
+  .rsvp-deadline {
+    margin-top: 1.2rem;
+    text-align: center;
+    font-family: var(--font-mono);
+    font-size: var(--fs-micro);
+    letter-spacing: 0.25em;
+  }
 
 }
 
@@ -1273,7 +1181,6 @@ body.menu-open {
   font-size: var(--fs-section-title);
   font-weight: normal;
   color: var(--color-purple-800);
-
   margin-bottom: 1.5rem;
 }
 
@@ -1284,21 +1191,17 @@ body.menu-open {
   letter-spacing: 0.08em;
 }
 
-
 /* =====================================================
    FAQ SECTION
 ===================================================== */
-
 .faq-section {
   max-width: 1400px;
   margin: 0 auto;
   padding: 5rem 6vw;
-
   display: grid;
   grid-template-columns: 280px minmax(0, 1fr);
   align-items: start;
   gap: 5rem;
-
   background: var(--color-beige);
 }
 
@@ -1315,18 +1218,16 @@ body.menu-open {
   .faq-title-line {
     margin: 0.7rem auto 1.5rem !important;
   }
+
 }
 
-
 /* ---------- FAQ heading ---------- */
-
 .faq-heading-col {
   padding-top: 0.5rem;
 }
 
 .faq-title {
   margin: 0;
-
   font-family: var(--font-display);
   font-size: var(--fs-section-title);
   font-weight: normal;
@@ -1335,27 +1236,21 @@ body.menu-open {
 
 .faq-title-line {
   display: block;
-
   width: 110px;
   height: 1px;
-
   margin: 0.7rem 0 1.5rem;
-
   background: var(--color-green-800);
 }
 
 .faq-subtitle {
   margin: 0;
-
   font-family: var(--font-mono);
   font-size: 1rem;
   font-weight: 500;
   letter-spacing: 0.35em;
 }
 
-
 /* ---------- FAQ list ---------- */
-
 .faq-list {
   width: 100%;
 }
@@ -1363,7 +1258,6 @@ body.menu-open {
 .faq-item {
   margin: 0;
   padding: 0;
-
   border-top: 1px solid rgba(0, 0, 0, 0.35);
 }
 
@@ -1371,33 +1265,24 @@ body.menu-open {
   border-bottom: 1px solid rgba(0, 0, 0, 0.35);
 }
 
-
 /* ---------- Question ---------- */
-
 .faq-question {
   width: 100%;
-
   margin: 0;
   padding: 1.35rem 0;
-
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 1rem;
-
   border: 0;
   background: transparent;
-
   color: var(--color-text);
-
   font-family: var(--font-mono);
   font-size: 1rem;
   font-weight: 500;
   line-height: 1.4;
   letter-spacing: 0.32em;
-
   text-align: left;
-
   cursor: pointer;
 }
 
@@ -1405,25 +1290,18 @@ body.menu-open {
   opacity: 0.7;
 }
 
-
 /* ---------- Plus / minus ---------- */
-
 .faq-icon {
   flex: 0 0 auto;
-
   display: flex;
   align-items: center;
   justify-content: center;
-
   width: 20px;
   height: 20px;
-
   margin-left: 1rem;
-
   font-size: 1.2rem;
   font-weight: 400;
   line-height: 1;
-
   transition: transform 0.3s ease;
 }
 
@@ -1431,38 +1309,24 @@ body.menu-open {
   transform: rotate(180deg);
 }
 
-
 /* =====================================================
    FAQ ANSWER ANIMATION
 
    max-height is used instead of grid-template-rows.
    This completely removes closed-answer spacing.
 ===================================================== */
-
 .faq-answer {
   max-height: 0;
-
   margin: 0;
   padding: 0;
-
   overflow: hidden;
-
   opacity: 0;
   transform: translateY(-6px);
-
-  transition:
-    max-height 0.45s ease,
-    opacity 0.3s ease,
-    transform 0.4s ease;
+  transition: max-height 0.45s ease, opacity 0.3s ease, transform 0.4s ease;
 }
 
 .faq-answer.is-open {
-  /*
-    Large enough to accommodate the longest answer.
-    The content is still visually animated.
-  */
   max-height: 500px;
-
   opacity: 1;
   transform: translateY(0);
 }
@@ -1470,7 +1334,6 @@ body.menu-open {
 .faq-answer p {
   margin: 0;
   padding: 0 3rem 1.35rem 0;
-
   font-family: var(--font-mono);
   font-size: var(--fs-body);
   font-weight: 300;
@@ -1499,11 +1362,9 @@ body.menu-open {
 /* =====================================================
    CONTACT SECTION
 ===================================================== */
-
 .contact-section {
   background: var(--color-purple-800);
   color: #ffffff;
-
   text-align: center;
   padding: 4.5rem 6vw 0;
 }
@@ -1529,7 +1390,6 @@ body.menu-open {
 
 .contact-copy {
   margin: 2rem auto;
-
   font-family: var(--font-mono);
   font-size: var(--fs-body);
   line-height: 1.8;
@@ -1540,7 +1400,6 @@ body.menu-open {
   display: flex;
   justify-content: center;
   align-items: center;
-
   gap: 4rem;
   margin: 2rem 0 4rem;
 }
@@ -1549,7 +1408,6 @@ body.menu-open {
   display: flex;
   align-items: center;
   gap: 0.8rem;
-
   font-family: var(--font-mono);
   font-size: var(--fs-small);
   letter-spacing: 0.18em;
@@ -1558,15 +1416,12 @@ body.menu-open {
 .contact-icon {
   width: 42px;
   height: 42px;
-
   border-radius: 50%;
   background: #ffffff;
   color: var(--color-purple-800);
-
   display: inline-flex;
   align-items: center;
   justify-content: center;
-
   font-size: 1.1rem;
 }
 
@@ -1578,53 +1433,40 @@ body.menu-open {
 
 .contact-footer {
   border-top: 1px solid rgba(255,255,255,0.35);
-
   padding: 1.5rem 1rem;
-
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 2rem;
-
   font-family: var(--font-mono);
   font-size: 0.6rem;
   letter-spacing: 0.1em;
   font-family: DM Mono;
-font-weight: 500;
-font-style: Medium;
-font-size: 16px;
-leading-trim: NONE;
-line-height: 155%;
-letter-spacing: 0px;
-text-align: right;
-
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 155%;
+  letter-spacing: 0px;
+  text-align: right;
 }
 
 /* =====================================================
    RSVP GUEST VALIDATION
 ===================================================== */
-
 .guest-error {
   display: none;
-
   margin: 14px 0 0;
-
   font-family: var(--font-mono);
   font-size: 11px;
   font-weight: 600;
-
   letter-spacing: 1px;
   line-height: 1.5;
-
   color: #a83b3b;
 }
-
 
 /* Show validation error */
 .guest-error.show {
   display: block;
 }
-
 
 /* Optional subtle error emphasis */
 .guest-counts.has-error {
@@ -1633,12 +1475,18 @@ text-align: right;
   border-radius: 4px;
 }
 
-
 /* =====================================================
    FAQ + CONTACT MOBILE
 ===================================================== */
-
 @media (max-width: 720px) {
+  .info-card-heading {
+    font-size: 2.2rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .phts {
+    gap: 2rem !important;
+  }
 
   .faq-section {
     display: block;
@@ -1663,7 +1511,7 @@ text-align: right;
     padding: 1.15rem 0;
     font-size: 15px;
     line-height: 1.5;
- letter-spacing: 0.06em;
+    letter-spacing: 0.06em;
   }
 
   .faq-icon {
@@ -1675,7 +1523,6 @@ text-align: right;
     font-size: 14px;
     line-height: 1.7;
   }
-
 
   .contact-section {
     padding: 3.5rem 6vw 0;
@@ -1704,9 +1551,7 @@ text-align: right;
   .contact-details {
     flex-direction: column;
     gap: 1rem;
-
     align-items: flex-start;
-
     width: fit-content;
     margin: 2rem auto 3rem;
   }
@@ -1719,15 +1564,167 @@ text-align: right;
   .contact-icon {
     width: 34px;
     height: 34px;
-
   }
 
   .contact-footer {
     flex-wrap: wrap;
     gap: 0.5rem 1rem;
-
-    font-size: 0.5rem;
+    font-size: 12px;
     line-height: 1.8;
   }
 
+}
+
+.venue-section {
+  padding: 2rem 5vw;
+  background: var(--color-beige);
+}
+
+.venue-card {
+  max-width: 1200px;
+  margin: 0 auto;
+  margin-bottom: 70px;
+  display: grid;
+  grid-template-columns: 230px 1fr;
+  align-items: center;
+  column-gap: 3.5rem;
+  padding: 2.5rem 3rem;
+  background: var(--color-green-100);
+  border-radius: 28px;
+}
+
+/* LEFT SIDE */
+.venue-left {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.venue-title {
+  margin: 0;
+  font-family: var(--font-display);
+  font-weight: normal;
+  font-size: 3rem;
+  line-height: 1;
+}
+
+.venue-line {
+  display: block;
+  width: 100px;
+  height: 2px;
+  margin-top: 1rem;
+  background: #ffffff;
+}
+
+/* RIGHT SIDE */
+.venue-right {
+  width: 100%;
+  max-width: 620px;
+}
+
+.venue-intro {
+  margin: 0 0 1.25rem;
+  font-family: var(--font-mono);
+  font-size: 1rem;
+  letter-spacing: 1px;
+  line-height: 1.5;
+}
+
+.venue-address {
+  display: inline-block;
+  padding: 0.7rem 1rem;
+  background: rgba(248, 247, 243, 0.75);
+  font-family: var(--font-mono);
+  font-weight: 500;
+  font-size: 1rem;
+  letter-spacing: 0.16em;
+  line-height: 1.5;
+  text-transform: uppercase;
+}
+
+.venue-map-link {
+  display: block;
+  width: fit-content;
+  margin-top: 1rem;
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  color: #000000;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+/* TABLET */
+@media (max-width: 900px) {
+  .venue-card {
+    grid-template-columns: 180px 1fr;
+    column-gap: 2rem;
+    padding: 2rem;
+  }
+
+  .venue-title {
+    font-size: 2.5rem;
+  }
+
+}
+
+/* MOBILE */
+@media (max-width: 720px) {
+  .venue-section {
+    padding: 1.5rem 5vw;
+  }
+
+  .venue-card {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2rem;
+    padding: 2.25rem 1.5rem;
+    border-radius: 22px;
+  }
+
+  .venue-left {
+    width: 100%;
+    align-items: center;
+  }
+
+  .venue-title {
+    font-size: 2.2rem;
+  }
+
+  .venue-line {
+    width: 90px;
+  }
+
+  .venue-right {
+    max-width: 100%;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .venue-intro {
+    font-size: 0.9rem;
+    text-align: center;
+  }
+
+  .venue-address {
+    width: 100%;
+    text-align: center;
+    font-size: 0.88rem;
+    letter-spacing: 0.12em;
+  }
+
+  .venue-map-link {
+    font-size: 0.85rem;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+  }
+
+}
+
+.phts {
+  gap: 7rem;
 }
