@@ -134,63 +134,317 @@ document.querySelectorAll('.faq-question').forEach(button => {
 const rsvpForm = document.getElementById('wedding-rsvp');
 
 if (rsvpForm) {
-  rsvpForm.addEventListener('submit', async (event) => {
-    event.preventDefault();
 
-    const submitButton = rsvpForm.querySelector('.rsvp-submit');
+  const guestError =
+    document.getElementById('guest-error');
 
-    const formData = new FormData(rsvpForm);
+  const guestCounts =
+    rsvpForm.querySelector('.guest-counts');
 
-    const attendance = formData.get('attendance');
+  const attendanceRadios =
+    rsvpForm.querySelectorAll('input[name="attendance"]');
 
-    const data = {
-      firstName: formData.get('firstName'),
-      lastName: formData.get('lastName'),
-      email: formData.get('email'),
-      attendance: attendance,
-      adults:
-        attendance === "I won't be attending"
-          ? 0
-          : Number(formData.get('adults') || 0),
-      children:
-        attendance === "I won't be attending"
-          ? 0
-          : Number(formData.get('children') || 0)
-    };
 
-    submitButton.disabled = true;
-    submitButton.textContent = 'SUBMITTING...';
+  // =====================================================
+  // SHOW / HIDE GUEST ERROR
+  // =====================================================
 
-    try {
+  function showGuestError() {
 
-      await fetch(
-        'https://script.google.com/macros/s/AKfycbxrcixk_NFXtTu9uHkX2TihABrEdip-Q0xfPX9o-KpdOfp-EAhOUCh6PHp6hMXJz9iH/exec',
-        {
-          method: 'POST',
-          body: JSON.stringify(data),
-          mode: 'no-cors'
-        }
+    if (guestError) {
+      guestError.classList.add('show');
+    }
+
+    if (guestCounts) {
+      guestCounts.classList.add('has-error');
+    }
+
+  }
+
+
+  function clearGuestError() {
+
+    if (guestError) {
+      guestError.classList.remove('show');
+    }
+
+    if (guestCounts) {
+      guestCounts.classList.remove('has-error');
+    }
+
+  }
+
+
+  // =====================================================
+  // DISABLE GUEST COUNTERS WHEN NOT ATTENDING
+  // =====================================================
+
+  function updateGuestControls() {
+
+    const selected =
+      rsvpForm.querySelector(
+        'input[name="attendance"]:checked'
       );
 
-      rsvpForm.innerHTML = `
-        <div class="rsvp-success">
-          <h3>Thank You!</h3>
-          <p>Your RSVP has been received.</p>
-          <p>We can't wait to celebrate with you.</p>
-        </div>
-      `;
+    if (!selected || !guestCounts) return;
 
-    } catch (error) {
+    const declining =
+      selected.value === "I won't be attending";
 
-      console.error(error);
 
-      submitButton.disabled = false;
-      submitButton.textContent = 'RSVP';
+    // Disable / enable plus and minus buttons
+    guestCounts
+      .querySelectorAll('button')
+      .forEach(button => {
 
-      alert(
-        'Something went wrong while submitting your RSVP. Please try again.'
-      );
+        button.disabled = declining;
+
+      });
+
+
+    // If declining, reset guest counts to zero
+    if (declining) {
+
+      guestCounts
+        .querySelectorAll('.counter-value')
+        .forEach(counter => {
+
+          counter.textContent = '0';
+
+        });
+
+
+      guestCounts
+        .querySelectorAll('input[type="hidden"]')
+        .forEach(input => {
+
+          input.value = '0';
+
+        });
+
+
+      clearGuestError();
 
     }
+
+  }
+
+
+  // =====================================================
+  // ATTENDANCE CHANGE
+  // =====================================================
+
+  attendanceRadios.forEach(radio => {
+
+    radio.addEventListener(
+      'change',
+      updateGuestControls
+    );
+
   });
+
+
+  // Set initial state when page loads
+  updateGuestControls();
+
+
+  // =====================================================
+  // CLEAR ERROR WHEN GUEST COUNT CHANGES
+  // =====================================================
+
+  rsvpForm
+    .querySelectorAll('.counter-plus, .counter-minus')
+    .forEach(button => {
+
+      button.addEventListener('click', () => {
+
+        // Run after your existing counter code updates the values
+        setTimeout(() => {
+
+          const adults = Number(
+            rsvpForm.querySelector(
+              'input[name="adults"]'
+            ).value || 0
+          );
+
+          const children = Number(
+            rsvpForm.querySelector(
+              'input[name="children"]'
+            ).value || 0
+          );
+
+          if (adults + children > 0) {
+            clearGuestError();
+          }
+
+        }, 0);
+
+      });
+
+    });
+
+
+  // =====================================================
+  // FORM SUBMISSION
+  // =====================================================
+
+  rsvpForm.addEventListener(
+    'submit',
+    async (event) => {
+
+      event.preventDefault();
+
+      const submitButton =
+        rsvpForm.querySelector('.rsvp-submit');
+
+      const formData =
+        new FormData(rsvpForm);
+
+      const attendance =
+        formData.get('attendance');
+
+      const adults =
+        Number(formData.get('adults') || 0);
+
+      const children =
+        Number(formData.get('children') || 0);
+
+      const isDeclining =
+        attendance === "I won't be attending";
+
+
+      // =====================================================
+      // VALIDATE GUEST COUNT
+      // =====================================================
+
+      if (
+        !isDeclining &&
+        adults + children === 0
+      ) {
+
+        showGuestError();
+
+        guestCounts.scrollIntoView({
+          behavior: 'smooth',
+          block: 'center'
+        });
+
+        return;
+
+      }
+
+
+      clearGuestError();
+
+
+      // =====================================================
+      // PREPARE RSVP DATA
+      // =====================================================
+
+      const data = {
+
+        firstName:
+          formData.get('firstName'),
+
+        lastName:
+          formData.get('lastName'),
+
+        email:
+          formData.get('email'),
+
+        attendance:
+          attendance,
+
+        adults:
+          isDeclining ? 0 : adults,
+
+        children:
+          isDeclining ? 0 : children
+
+      };
+
+
+      // =====================================================
+      // SUBMIT
+      // =====================================================
+
+      submitButton.disabled = true;
+
+      submitButton.textContent =
+        'SUBMITTING...';
+
+
+      try {
+
+        await fetch(
+          'https://script.google.com/macros/s/AKfycbxrcixk_NFXtTu9uHkX2TihABrEdip-Q0xfPX9o-KpdOfp-EAhOUCh6PHp6hMXJz9iH/exec',
+          {
+            method: 'POST',
+            body: JSON.stringify(data),
+            mode: 'no-cors'
+          }
+        );
+
+
+        // =====================================================
+        // SUCCESS MESSAGE
+        // =====================================================
+
+        if (isDeclining) {
+
+          rsvpForm.innerHTML = `
+            <div class="rsvp-success">
+
+              <h3>Thank You!</h3>
+
+              <p>
+                Your RSVP has been received.
+              </p>
+
+              <p>
+                Thank you for letting us know.
+              </p>
+
+            </div>
+          `;
+
+        } else {
+
+          rsvpForm.innerHTML = `
+            <div class="rsvp-success">
+
+              <h3>Thank You!</h3>
+
+              <p>
+                Your RSVP has been received.
+              </p>
+
+              <p>
+                We can't wait to celebrate with you.
+              </p>
+
+            </div>
+          `;
+
+        }
+
+
+      } catch (error) {
+
+        console.error(error);
+
+        submitButton.disabled = false;
+
+        submitButton.textContent =
+          'RSVP';
+
+        alert(
+          'Something went wrong while submitting your RSVP. Please try again.'
+        );
+
+      }
+
+    }
+  );
+
 }
