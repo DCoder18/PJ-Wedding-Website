@@ -479,6 +479,11 @@ body.menu-open {
   font-weight: normal;
   font-size: var(--fs-subheading);
   margin-bottom: 0.75rem;
+ 
+}
+
+.phts {
+   margin-right: 30px;
 }
 
 .info-card-underline {
@@ -510,9 +515,13 @@ body.menu-open {
   letter-spacing: 0.06em;
   text-transform: uppercase;
   max-width: 526px;
-  padding: 1.25rem 1.5rem;
+  padding: 20px 20px;
   margin-bottom: 1.5rem;
   line-height: 1.6;
+}
+
+.accomodation {
+  padding: 5px 0px !important;
 }
 
 .info-card-box.info-card-box--address {
@@ -826,6 +835,8 @@ body.menu-open {
 }
 
 .bank-details-btn {
+  display: inline-block;
+
   margin-top: 1.75rem;
   padding: 1rem 1.5rem;
 
@@ -833,16 +844,25 @@ body.menu-open {
   border: none;
 
   font-family: var(--font-mono);
-  font-size: var(--fs-micro);
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 135%;
+
   letter-spacing: 3px;
+  text-align: center;
+  text-transform: uppercase;
+
+  color: #000000;
+  text-decoration: none;
 
   cursor: pointer;
+
+  transition: opacity 0.2s ease;
 }
 
 .bank-details-btn:hover {
   opacity: 0.8;
 }
-
 
 /* =====================================================
    RSVP SECTION
@@ -1461,6 +1481,39 @@ body.menu-open {
   font-family: var(--font-mono);
   font-size: 0.6rem;
   letter-spacing: 0.1em;
+}
+
+/* =====================================================
+   RSVP GUEST VALIDATION
+===================================================== */
+
+.guest-error {
+  display: none;
+
+  margin: 14px 0 0;
+
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 600;
+
+  letter-spacing: 1px;
+  line-height: 1.5;
+
+  color: #a83b3b;
+}
+
+
+/* Show validation error */
+.guest-error.show {
+  display: block;
+}
+
+
+/* Optional subtle error emphasis */
+.guest-counts.has-error {
+  outline: 1px solid rgba(168, 59, 59, 0.45);
+  outline-offset: 8px;
+  border-radius: 4px;
 }
 
 
