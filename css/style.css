@@ -1101,7 +1101,7 @@ body.menu-open {
   }
 
   .rsvp-photo {
-    height: auto;
+    height: 410px;
     max-width: 100%;
   }
 
@@ -1721,6 +1721,10 @@ body.menu-open {
     align-items: center;
     display: flex;
     flex-direction: column;
+  }
+
+  .bank-details-btn {
+    padding: 1rem 1.3rem;
   }
 
 }
