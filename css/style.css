@@ -377,13 +377,10 @@ body.menu-open {
   transition: filter 0.5s ease;
 }
 
-
-
 .meet-photo-wrap:hover .meet-photo,
 .meet-photo-wrap.is-colored .meet-photo {
   filter: grayscale(0%);
 }
-
 
 
 .meet-heading {
