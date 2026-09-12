@@ -382,6 +382,7 @@ body.menu-open {
   filter: grayscale(0%);
 }
 
+
 .meet-heading {
   font-family: var(--font-display);
   font-weight: normal;
@@ -912,6 +913,13 @@ body.menu-open {
   object-position: center;
   border: 2px solid #ffffff;
   filter: grayscale(100%);
+  transition: filter 0.5s ease;
+
+}
+
+.rsvp-photo:hover{
+  filter: grayscale(0%);
+  transition: filter 0.5s ease;
 }
 
 /* RIGHT FORM SIDE */
@@ -1104,6 +1112,7 @@ body.menu-open {
     height: 410px;
     max-width: 100%;
   }
+  
 
   .rsvp-form-side {
     padding: 4rem 7vw;
@@ -1439,11 +1448,10 @@ body.menu-open {
   align-items: center;
   gap: 2rem;
   font-family: var(--font-mono);
-  font-size: 0.6rem;
   letter-spacing: 0.1em;
   font-family: DM Mono;
   font-weight: 500;
-  font-size: 16px;
+  font-size: 14px;
   line-height: 155%;
   letter-spacing: 0px;
   text-align: right;
@@ -1520,7 +1528,7 @@ body.menu-open {
 
   .faq-answer p {
     padding: 0 1rem 1.25rem 0;
-    font-size: 14px;
+    font-size: var(--fs-small);
     line-height: 1.7;
   }
 
@@ -1569,7 +1577,7 @@ body.menu-open {
   .contact-footer {
     flex-wrap: wrap;
     gap: 0.5rem 1rem;
-    font-size: 12px;
+    font-size: 11px;
     line-height: 1.8;
   }
 
