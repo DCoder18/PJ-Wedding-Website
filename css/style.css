@@ -376,7 +376,6 @@ body.menu-open {
   filter: grayscale(100%);
   transition: filter 0.5s ease;
 }
-
 .meet-photo-wrap:hover .meet-photo,
 .meet-photo-wrap.is-colored .meet-photo {
   filter: grayscale(0%);
@@ -1529,6 +1528,11 @@ body.menu-open {
   .faq-answer p {
     padding: 0 1rem 1.25rem 0;
     font-size: var(--fs-small);
+    line-height: 1.7;
+  }
+
+  .faq-answer li {
+    font-size: var(--fs-small) !important;
     line-height: 1.7;
   }
 
