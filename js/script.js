@@ -211,7 +211,7 @@ if (rsvpForm) {
     if (!selected || !guestCounts) return;
 
     const declining =
-      selected.value === "I won't be attending";
+      selected.value === "Regretfully Declines";
 
 
     // Disable / enable plus and minus buttons
@@ -424,7 +424,7 @@ if (rsvpForm) {
               </p>
 
               <p>
-                Thank you for letting us know.
+                We appreciate you letting us know.
               </p>
 
             </div>
@@ -438,11 +438,11 @@ if (rsvpForm) {
               <h3>Thank You!</h3>
 
               <p>
-                Your RSVP has been received.
+                Your RSVP has been received!
               </p>
 
               <p>
-                We can't wait to celebrate with you.
+                Please check your inbox for confirmation details.
               </p>
 
             </div>

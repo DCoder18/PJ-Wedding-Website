@@ -709,11 +709,12 @@ body.menu-open {
   }
 
   .meet-name-pill {
-    font-size: clamp(.7rem, 15vw, .8rem);
+    font-size: 0.95rem;
   }
 
   .meet-parent {
-    font-size: clamp(.6rem, 15vw, .8rem);
+    font-size: var(--fs-small);
+    line-height: 22px;
   }
 
   .meet-photo-wrap {
