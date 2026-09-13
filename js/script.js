@@ -332,7 +332,7 @@ if (rsvpForm) {
         Number(formData.get('children') || 0);
 
       const isDeclining =
-        attendance === "I won't be attending";
+        attendance === "Regretfully Declines";
 
 
       // =====================================================
