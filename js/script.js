@@ -394,7 +394,7 @@ if (rsvpForm) {
 
       submitButton.textContent =
         'SUBMITTING...';
-
+//test
 
       try {
 
